@@ -26,7 +26,9 @@ body::before {
 }
 
 .community-container {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     max-width: 700px;
     animation: fadeInScale 1s ease-out;
 }
@@ -177,7 +179,9 @@ body::before {
     position: absolute;
     top: 0;
     left: -100%;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
     transition: left 0.6s;
@@ -212,7 +216,9 @@ body::before {
 
 /* 講師紹介ページ用スタイル */
 .instructor-container {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     max-width: 900px;
     animation: fadeInScale 1s ease-out;
 }
@@ -345,7 +351,9 @@ body::before {
 }
 
 .video-placeholder {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     height: 120px;
     background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
     border-radius: 12px;
@@ -405,7 +413,9 @@ body::before {
     position: absolute;
     top: 0;
     left: -100%;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
     transition: left 0.6s;
@@ -439,7 +449,9 @@ body::before {
 
 /* トライアルレッスンページ用スタイル */
 .trial-container {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     max-width: 800px;
     animation: fadeInScale 1s ease-out;
 }
@@ -762,7 +774,9 @@ body::before {
     position: absolute;
     top: 0;
     left: -100%;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
     transition: left 0.6s;
@@ -809,7 +823,9 @@ body::before {
 
 /* Class0ページ用スタイル */
 .class0-container {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     max-width: 1000px;
     animation: fadeInScale 1s ease-out;
 }
@@ -971,7 +987,9 @@ body::before {
 }
 
 .form-input, .form-select {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     padding: 14px;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1117,7 +1135,9 @@ body::before {
     position: absolute;
     top: 0;
     left: -100%;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.6s;
@@ -1388,7 +1408,9 @@ body::before {
 
 /* TrialThanksページ用スタイル */
 .trial-thanks-container {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     max-width: 900px;
     animation: fadeInScale 1s ease-out;
 }
@@ -1872,11 +1894,12 @@ body {
 /* ヒーローセクション */
 .hero-section {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
-    padding: 6rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     min-height: 80vh;
     display: flex;
     align-items: center;
@@ -1977,7 +2000,9 @@ body {
 .section {
     padding: 6rem 0;
     position: relative;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
 }
 
 .section:nth-child(even) {
@@ -1985,7 +2010,9 @@ body {
 }
 
 .section-container {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -2128,11 +2155,15 @@ body {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.9));
     padding: 4rem 0 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
 }
 
 .footer-container {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
