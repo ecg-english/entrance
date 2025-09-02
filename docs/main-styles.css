@@ -1937,13 +1937,12 @@ body {
 .background-logo-image {
     width: 600px;
     height: auto;
-    opacity: 0.08;
-    filter: grayscale(100%) brightness(1.2);
+    opacity: 0.1;
     transition: all 0.8s ease;
 }
 
 .hero-section:hover .background-logo-image {
-    opacity: 0.12;
+    opacity: 0.32;
     transform: scale(1.02);
 }
 
@@ -2361,11 +2360,11 @@ body {
     /* 背景ロゴ */
     .background-logo-image {
         width: 300px;
-        opacity: 0.05;
+        opacity: 0.1;
     }
     
     .hero-section:hover .background-logo-image {
-        opacity: 0.07;
+        opacity: 0.37;
     }
 }
 
@@ -2761,11 +2760,11 @@ body {
     /* 背景ロゴ */
     .background-logo-image {
         width: 400px;
-        opacity: 0.06;
+        opacity: 0.1;
     }
     
     .hero-section:hover .background-logo-image {
-        opacity: 0.08;
+        opacity: 0.38;
     }
     
     /* セクション共通 */
