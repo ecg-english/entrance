@@ -2323,50 +2323,228 @@ body {
 
 /* フッター */
 .footer {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.9));
-    padding: 4rem 0 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.98) 0%, 
+        rgba(20, 20, 40, 0.95) 25%, 
+        rgba(40, 20, 60, 0.92) 50%, 
+        rgba(20, 20, 40, 0.95) 75%, 
+        rgba(0, 0, 0, 0.98) 100%);
+    padding: 6rem 0 3rem;
+    border-top: none;
     width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        #4a90e2 20%, 
+        #64b5f6 50%, 
+        #4a90e2 80%, 
+        transparent 100%);
+    box-shadow: 0 0 20px rgba(74, 144, 226, 0.6);
+}
+
+.footer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse 800px 400px at 20% 0%, rgba(74, 144, 226, 0.05) 0%, transparent 70%),
+        radial-gradient(ellipse 600px 300px at 80% 100%, rgba(255, 255, 255, 0.03) 0%, transparent 70%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.01) 0%, transparent 100%);
+    pointer-events: none;
 }
 
 .footer-container {
-    width: 100%;
-    max-width: 100%;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 4rem;
+    padding: 0 2rem;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.footer-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 80%;
+    background: linear-gradient(180deg, 
+        transparent 0%, 
+        rgba(74, 144, 226, 0.3) 20%, 
+        rgba(74, 144, 226, 0.6) 50%, 
+        rgba(74, 144, 226, 0.3) 80%, 
+        transparent 100%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.footer-section {
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.02) 0%, 
+        rgba(74, 144, 226, 0.03) 50%, 
+        rgba(255, 255, 255, 0.01) 100%);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden;
+}
+
+.footer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(74, 144, 226, 0.05) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.02) 100%);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.footer-section:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.04) 0%, 
+        rgba(74, 144, 226, 0.06) 50%, 
+        rgba(255, 255, 255, 0.02) 100%);
+    border-color: rgba(74, 144, 226, 0.2);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(74, 144, 226, 0.1);
+}
+
+.footer-section:hover::before {
+    opacity: 1;
 }
 
 .footer-section h3 {
     color: #ffffff;
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #64b5f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.8s ease;
+    position: relative;
+}
+
+.footer-section:hover h3 {
+    background: linear-gradient(135deg, #ffffff 0%, #4a90e2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .footer-section p,
 .footer-section a {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    line-height: 1.7;
-    font-size: 1rem;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    font-weight: 400;
+    transition: all 0.6s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-section a {
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.6s ease;
+}
+
+.footer-section a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(74, 144, 226, 0.1) 0%, 
+        rgba(74, 144, 226, 0.05) 100%);
+    border-radius: 25px;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: -1;
 }
 
 .footer-section a:hover {
-    color: #4a90e2;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.footer-section a:hover::before {
+    opacity: 1;
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 2rem;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9rem;
+    border-top: 1px solid rgba(74, 144, 226, 0.2);
+    padding-top: 3rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        #4a90e2 50%, 
+        transparent 100%);
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+.footer-bottom::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(74, 144, 226, 0.3) 50%, 
+        transparent 100%);
+    transform: translateX(-50%);
 }
 
 /* レスポンシブ対応 */
@@ -2415,50 +2593,117 @@ body {
     }
     
     .services-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
         margin-top: 3rem;
+        margin: 0 1rem;
+    }
+    
+    .services-grid::before {
+        display: none;
     }
     
     .service-card {
         padding: 2.5rem 1.5rem;
-        margin: 0 1rem;
-        border-radius: 20px;
+        margin: 0;
+        clip-path: none;
+        text-align: center;
+    }
+    
+    .service-card:nth-child(odd),
+    .service-card:nth-child(even) {
+        clip-path: none;
+        text-align: center;
     }
     
     .service-icon {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 2rem;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 2rem;
+        float: none;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    .service-card:nth-child(even) .service-icon {
+        float: none;
+        margin-right: 0;
+        margin-left: 0;
     }
     
     .service-icon svg {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
     
     .service-title {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
+        text-align: center;
     }
     
     .service-description {
         font-size: 1.05rem;
         margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .service-features {
+        text-align: center;
     }
     
     .service-features li {
         font-size: 1rem;
         padding: 0.6rem 0;
+        text-align: center;
+        padding-left: 0;
+    }
+    
+    .service-features li::before {
+        position: static;
+        display: inline-block;
+        margin-right: 0.5rem;
+        transform: none;
     }
     
     .service-button {
         padding: 1rem 2rem;
         font-size: 1rem;
+        float: none;
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+    }
+    
+    .service-card:nth-child(even) .service-button {
+        float: none;
     }
     
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .footer-content::before {
+        display: none;
+    }
+    
+    .footer-section {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-section p,
+    .footer-section a {
+        font-size: 1rem;
+    }
+    
+    .footer-container {
+        padding: 0 1rem;
     }
     
     .hero-content,
@@ -2523,5 +2768,14 @@ body {
     
     .service-card {
         padding: 1.5rem;
+    }
+    
+    .footer-section {
+        padding: 1rem;
+        margin: 0 0.5rem;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.3rem;
     }
 }
