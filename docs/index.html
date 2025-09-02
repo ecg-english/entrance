@@ -313,14 +313,22 @@
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
 
+        console.log('Mobile menu elements found:', { mobileMenuToggle, navMenu });
+
         mobileMenuToggle.addEventListener('click', () => {
+            console.log('Mobile menu toggle clicked');
             mobileMenuToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
+            console.log('Menu state:', { 
+                toggleActive: mobileMenuToggle.classList.contains('active'),
+                menuActive: navMenu.classList.contains('active')
+            });
         });
 
         // メニューリンクをクリックしたらメニューを閉じる
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
+                console.log('Menu link clicked, closing menu');
                 mobileMenuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
             });
