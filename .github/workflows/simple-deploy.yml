@@ -1,19 +1,12 @@
-name: Deploy to GitHub Pages
+name: Simple Deploy to GitHub Pages
 
 on:
   push:
     branches: [ main ]
     paths:
       - 'docs/**'
-      - '.github/workflows/**'
   workflow_dispatch:
 
-# 重複実行を防ぐ
-concurrency:
-  group: "pages-deploy"
-  cancel-in-progress: true
-
-# 権限を明示的に設定
 permissions:
   contents: write
   pages: write
@@ -37,6 +30,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
         publish_branch: main
-        force_orphan: false
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com' 
+        force_orphan: false 
