@@ -5,19 +5,14 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
     position: relative;
     color: #1e293b;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    overflow-x: hidden; /* 横スクロールを防ぐ */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden; /* 横スクロールを防ぐ */
 }
 
 body::before {
@@ -2083,15 +2078,7 @@ body {
     line-height: 1.6;
 }
 
-/* サービスセクション */
-.services-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 4rem !important;
-    margin-top: 5rem !important;
-    position: relative !important;
-    width: 100% !important;
-}
+
 
 .service-card {
     position: relative !important;
