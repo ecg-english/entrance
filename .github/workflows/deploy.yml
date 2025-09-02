@@ -6,9 +6,22 @@ on:
   pull_request:
     branches: [ main ]
 
+# 権限を明示的に設定
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 環境変数を設定
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     
     steps:
     - name: Checkout
@@ -30,6 +43,7 @@ jobs:
         echo "Static site - no build required"
         
     - name: Deploy to GitHub Pages
+      id: deployment
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
