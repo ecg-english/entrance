@@ -1854,10 +1854,22 @@ body {
     color: #1e293b;
     text-decoration: none;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
 .logo:hover {
     color: #3b82f6;
+    transform: scale(1.05);
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-image {
     transform: scale(1.05);
 }
 
@@ -2987,6 +2999,10 @@ body {
         display: flex !important;
     }
     
+    .logo-image {
+        height: 35px;
+    }
+    
     .nav-menu {
         position: fixed !important;
         top: 70px !important;
@@ -3027,5 +3043,11 @@ body {
     .nav-link:hover {
         background: rgba(59, 130, 246, 0.1) !important;
         color: #1e293b !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-image {
+        height: 30px;
     }
 }
