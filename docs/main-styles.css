@@ -8,15 +8,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
     padding: 20px;
     position: relative;
     color: #1e293b;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     overflow-x: hidden; /* 横スクロールを防ぐ */
 }
 
@@ -2344,12 +2340,14 @@ body {
 
 /* フッター */
 .footer {
-
     padding: 8rem 0;
     border-top: none;
     width: 100%;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer::before {
@@ -2391,22 +2389,25 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
     margin-bottom: 4rem;
     position: relative;
     justify-items: center;
     text-align: center;
+    width: 100%;
+    max-width: 900px;
 }
 
 .footer-content::before {
@@ -2424,11 +2425,12 @@ body {
         transparent 100%);
     transform: translate(-50%, -50%);
     z-index: -1;
+    pointer-events: none;
 }
 
 .footer-section {
     position: relative;
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.5rem;
     background: 
         linear-gradient(135deg, 
             rgba(255, 255, 255, 0.9) 0%, 
@@ -2447,6 +2449,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
 }
 
 .footer-section::before {
@@ -2864,6 +2869,8 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        max-width: 280px;
     }
     
     .footer-section h3 {
@@ -2973,6 +2980,8 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        max-width: 260px;
     }
     
     .footer-section h3 {
