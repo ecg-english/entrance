@@ -2078,7 +2078,15 @@ body {
     line-height: 1.6;
 }
 
-
+/* サービスセクション */
+.services-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4rem !important;
+    margin-top: 5rem !important;
+    position: relative !important;
+    width: 100% !important;
+}
 
 .service-card {
     position: relative !important;
