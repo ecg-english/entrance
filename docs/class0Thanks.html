@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class0 申し込み完了 - Class1 Members</title>
+    <link rel="stylesheet" href="main-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container trial-thanks-container">
+        <div class="signboard trial-thanks-signboard">
+            <!-- 言語切り替えタブ -->
+            <div class="language-switcher">
+                <button class="language-tab active" data-lang="ja">日本語</button>
+                <button class="language-tab" data-lang="en">English</button>
+            </div>
+            
+            <div class="sign-header trial-thanks-header">
+                <h1 id="pageTitle">申し込み完了</h1>
+                <div class="neon-line trial-thanks-neon-line"></div>
+            </div>
+            
+            <div class="sign-content trial-thanks-content">
+                <div class="trial-thanks-message" id="thanksMessage">
+                    Class0へのお申し込みありがとうございます！<br>
+                    決済が完了しましたら、以下の流れで進めさせていただきます。
+                </div>
+                
+                <div class="flow-section">
+                    <h2 id="flowTitle">今後の流れ</h2>
+                    
+                    <div class="flow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title" id="step1Title">オンラインコミュニティに即座参加</div>
+                            <div class="step-description" id="step1Desc">まず、<a href="https://ecg-english.github.io/language-community/" target="_blank" style="color: #4a90e2;">オンラインコミュニティ</a>に入ってアカウントを作成してください。<br><strong>注意：フォームにて登録したメールアドレスと同じメールアドレスでアカウント作成を行ってください。</strong>初回は「ビジター」ロールでの参加となります。</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title" id="step2Title">登録情報の確認とロール昇格</div>
+                            <div class="step-description" id="step2Desc">登録された情報を確認し、登録されたメールアドレスと照合させて「Members」にロールを昇格させます。</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title" id="step3Title">ウェルカムメール送信</div>
+                            <div class="step-description" id="step3Desc">登録内容確認後にロールの昇格を完了したらウェルカムメールを送信いたします。メールを確認してロールが変わったことを確認してください。</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title" id="step4Title">活動開始</div>
+                            <div class="step-description" id="step4Desc">オンライン・オフライン問わず、世界中の人々と交流し、英語力向上と文化体験を楽しんでいただけます</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-section">
+                    <h2 id="contactTitle">お問い合わせ</h2>
+                    <div class="contact-message" id="contactMessage">
+                        もし2日以内にウェルカムメールが来なかった場合は、迷惑メールなどに入ってしまっていないかなどをご確認いただいた上、こちらの連絡先までご連絡ください。
+                    </div>
+                    
+                    <div class="contact-links">
+                        
+                        <a href="https://www.instagram.com/english_ecg/" target="_blank" class="contact-link">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            Instagram
+                        </a>
+                        
+                        <a href="mailto:ecg_english@nauticalmile.jp" class="contact-link">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            ecg_english@nauticalmile.jp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 言語データ
+        const languages = {
+            ja: {
+                pageTitle: '申し込み完了',
+                thanksMessage: 'Class0へのお申し込みありがとうございます！<br>決済が完了しましたら、以下の流れで進めさせていただきます。',
+                flowTitle: '今後の流れ',
+                step1Title: 'オンラインコミュニティに即座参加',
+                step1Desc: 'まず、<a href="https://ecg-english.github.io/language-community/" target="_blank" style="color: #4a90e2;">オンラインコミュニティ</a>に入ってアカウントを作成してください。<br><strong>注意：フォームにて登録したメールアドレスと同じメールアドレスでアカウント作成を行ってください。</strong>初回は「ビジター」ロールでの参加となります。',
+                step2Title: '登録情報の確認とロール昇格',
+                step2Desc: '登録された情報を確認し、登録されたメールアドレスと照合させて「Members」にロールを昇格させます。',
+                step3Title: 'ウェルカムメール送信',
+                step3Desc: '登録内容確認後にロールの昇格を完了したらウェルカムメールを送信いたします。メールを確認してロールが変わったことを確認してください。',
+                step4Title: '活動開始',
+                step4Desc: 'オンライン・オフライン問わず、世界中の人々と交流し、英語力向上と文化体験を楽しんでいただけます',
+                contactTitle: 'お問い合わせ',
+                contactMessage: 'もし2日以内にウェルカムメールが来なかった場合は、迷惑メールなどに入ってしまっていないかなどをご確認いただいた上、こちらの連絡先までご連絡ください。'
+            },
+            en: {
+                pageTitle: 'Application Complete',
+                thanksMessage: 'Thank you for applying to Class0!<br>Once payment is completed, we will proceed with the following steps.',
+                flowTitle: 'Next Steps',
+                step1Title: 'Join Online Community Immediately',
+                step1Desc: 'First, please join the <a href="https://ecg-english.github.io/language-community/" target="_blank" style="color: #4a90e2;">online community</a> and create an account.<br><strong>Important: Please create your account using the same email address you registered in the form.</strong> You will initially join as a "Visitor" role.',
+                step2Title: 'Registration Information Review and Role Promotion',
+                step2Desc: 'We will review your registered information and verify it against your registered email address to promote your role to "Members".',
+                step3Title: 'Welcome Email',
+                step3Desc: 'After confirming your registration and completing the role promotion, we will send you a welcome email. Please check your email to confirm that your role has changed.',
+                step4Title: 'Start Your Journey',
+                step4Desc: 'You can interact with people from around the world both online and offline, improving your English skills and enjoying cultural experiences',
+                contactTitle: 'Contact Us',
+                contactMessage: 'If you don\'t receive a welcome email within 2 days, please check if it went to your spam folder, and then contact us through the following channels.'
+            }
+        };
+
+        // 言語切り替え機能
+        function switchLanguage(lang) {
+            // アクティブタブの更新
+            document.querySelectorAll('.language-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+            
+            // HTMLのlang属性を更新
+            document.documentElement.lang = lang;
+            
+            // コンテンツの更新
+            const content = languages[lang];
+            document.getElementById('pageTitle').textContent = content.pageTitle;
+            document.getElementById('thanksMessage').innerHTML = content.thanksMessage;
+            document.getElementById('flowTitle').textContent = content.flowTitle;
+            document.getElementById('step1Title').textContent = content.step1Title;
+            document.getElementById('step1Desc').innerHTML = content.step1Desc;
+            document.getElementById('step2Title').textContent = content.step2Title;
+            document.getElementById('step2Desc').textContent = content.step2Desc;
+            document.getElementById('step3Title').textContent = content.step3Title;
+            document.getElementById('step3Desc').textContent = content.step3Desc;
+            document.getElementById('step4Title').textContent = content.step4Title;
+            document.getElementById('step4Desc').textContent = content.step4Desc;
+            document.getElementById('contactTitle').textContent = content.contactTitle;
+            document.getElementById('contactMessage').textContent = content.contactMessage;
+        }
+
+        // 言語切り替えタブのイベントリスナー
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.language-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                });
+            });
+        });
+        
+        // アニメーション効果の追加
+        function addScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            // 各セクションにアニメーションを適用
+            document.querySelectorAll('.flow-section, .contact-section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+        }
+        
+        // スクロールアニメーションを初期化
+        addScrollAnimations();
+    </script>
+</body>
+</html> 
