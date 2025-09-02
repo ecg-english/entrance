@@ -1925,27 +1925,6 @@ body {
     overflow-x: hidden; /* 横スクロールを防ぐ */
 }
 
-.hero-background-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-15deg);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.background-logo-image {
-    width: 600px;
-    height: auto;
-    opacity: 0.15;
-    transition: all 0.8s ease;
-}
-
-.hero-section:hover .background-logo-image {
-    opacity: 0.4;
-    transform: scale(1.02);
-}
-
 .hero-section::before {
     content: '';
     position: absolute;
@@ -1955,7 +1934,6 @@ body {
     bottom: 0;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(100,116,139,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
     opacity: 0.5;
-    z-index: 0;
 }
 
 .hero-content {
@@ -2172,200 +2150,196 @@ body {
 .service-icon {
     width: 80px;
     height: 80px;
-    margin: 0 auto 2rem;
-    float: none;
-    margin-right: 0;
-    margin-left: 0;
+    margin: 0 0 2rem 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, 
+        rgba(74, 144, 226, 0.2) 0%, 
+        rgba(74, 144, 226, 0.1) 50%, 
+        rgba(74, 144, 226, 0.05) 100%);
+    border-radius: 50%;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    box-shadow: 
+        0 8px 25px rgba(74, 144, 226, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    float: left;
+    margin-right: 2rem;
 }
 
 .service-card:nth-child(even) .service-icon {
-    float: none;
+    float: right;
     margin-right: 0;
-    margin-left: 0;
+    margin-left: 2rem;
+}
+
+.service-icon::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: conic-gradient(from 0deg, #4a90e2, #64b5f6, #4a90e2, #4a90e2);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.service-card:hover .service-icon {
+    background: linear-gradient(135deg, 
+        rgba(74, 144, 226, 0.3) 0%, 
+        rgba(74, 144, 226, 0.2) 50%, 
+        rgba(74, 144, 226, 0.1) 100%);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 
+        0 15px 35px rgba(74, 144, 226, 0.3),
+        0 0 0 1px rgba(74, 144, 226, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.service-card:hover .service-icon::before {
+    opacity: 1;
 }
 
 .service-icon svg {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
+    fill: #4a90e2;
+    transition: all 0.8s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.service-card:hover .service-icon svg {
+    fill: #64b5f6;
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(74, 144, 226, 0.4));
 }
 
 .service-title {
-    font-size: 1.8rem;
-    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.8s ease;
+    text-shadow: none;
+    display: block;
+    clear: both;
+}
+
+.service-card:hover .service-title {
+    background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .service-description {
-    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.8;
     margin-bottom: 2rem;
-    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 400;
+    transition: all 0.8s ease;
+    display: block;
+    clear: both;
+}
+
+.service-card:hover .service-description {
+    color: #1e293b;
 }
 
 .service-features {
-    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+    display: block;
+    clear: both;
 }
 
 .service-features li {
-    font-size: 1rem;
-    padding: 0.6rem 0;
-    text-align: center;
+    color: #64748b;
+    padding: 0.8rem 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: all 0.6s ease;
+    position: relative;
     padding-left: 0;
+    margin-bottom: 0.5rem;
 }
 
-.service-features li::before {
-    position: static;
-    display: inline-block;
-    margin-right: 0.5rem;
-    transform: none;
+.service-card:hover .service-features li {
+    color: #475569;
+    transform: translateX(8px);
 }
 
 .service-button {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    float: none;
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem 2.5rem;
+    background: linear-gradient(135deg, 
+        #8cb6f9 0%, 
+        #3b82f6 100%);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 2px solid rgba(74, 144, 226, 0.2);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 4px 15px rgba(74, 144, 226, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    float: left;
 }
 
 .service-card:nth-child(even) .service-button {
-    float: none;
+    float: right;
 }
 
-/* インストラクターセクション */
-.instructor-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-}
-
-.instructor-card {
-    padding: 1.5rem;
-}
-
-.instructor-card h3 {
-    font-size: 1.3rem;
-}
-
-.instructor-card p {
-    font-size: 0.9rem;
-}
-
-/* コミュニティセクション */
-.community-features {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.community-feature {
-    padding: 1rem;
-}
-
-.community-feature h3 {
-    font-size: 1.3rem;
-}
-
-.community-feature p {
-    font-size: 0.9rem;
-}
-
-/* コンテナ調整 */
-.hero-content,
-.section-container,
-.footer-container {
-    padding: 0 1rem;
+.service-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
     width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        transparent 100%);
+    transition: left 0.8s ease;
 }
 
-/* モバイルでの追加修正 */
-.hero-section,
-.section {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+.service-button:hover::before {
+    left: 100%;
 }
 
-.hero-content,
-.section-container {
-    padding: 0 1.5rem;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-/* さらに小さな画面サイズでの対応 */
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-        padding: 0 1rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-        padding: 0 1rem;
-    }
-    
-    .hero-description {
-        font-size: 0.95rem;
-        padding: 0 1rem;
-    }
-    
-    .hero-content,
-    .section-container,
-    .footer-container {
-        padding: 0 1rem;
-    }
-    
-    .hero-button {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .service-card {
-        padding: 1.5rem;
-    }
-    
-    .footer-section {
-        padding: 1rem;
-        margin: 0 0.5rem;
-    }
-    
-    .footer-section h3 {
-        font-size: 1.3rem;
-    }
-    
-    .instructor-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .instructor-card {
-        padding: 1rem;
-    }
-    
-    .community-features {
-        gap: 1rem;
-    }
-    
-    .community-feature {
-        padding: 1rem;
-    }
-    
-    /* 背景ロゴ */
-    .background-logo-image {
-        width: 300px;
-        opacity: 0.1;
-    }
-    
-    .hero-section:hover .background-logo-image {
-        opacity: 0.37;
-    }
+.service-button:hover {
+    background: linear-gradient(135deg, 
+        rgba(74, 144, 226, 0.25) 0%, 
+        rgba(74, 144, 226, 0.15) 100%);
+    border-color: rgba(74, 144, 226, 0.4);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 10px 25px rgba(74, 144, 226, 0.25),
+        0 0 0 1px rgba(74, 144, 226, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 /* フッター */
@@ -2757,16 +2731,6 @@ body {
         font-size: 1rem;
     }
     
-    /* 背景ロゴ */
-    .background-logo-image {
-        width: 400px;
-        opacity: 0.1;
-    }
-    
-    .hero-section:hover .background-logo-image {
-        opacity: 0.38;
-    }
-    
     /* セクション共通 */
     .section {
         padding: 3rem 0;
@@ -2778,6 +2742,156 @@ body {
     
     .section-subtitle {
         font-size: 1.1rem;
+    }
+    
+    /* サービスセクション */
+    .services-grid {
+        gap: 3rem;
+        margin-top: 3rem;
+        margin: 0 1rem;
+    }
+    
+    .services-grid::before {
+        display: none;
+    }
+    
+    .service-card {
+        padding: 2.5rem 1.5rem;
+        margin: 0;
+        clip-path: none;
+        text-align: center;
+    }
+    
+    .service-card:nth-child(odd),
+    .service-card:nth-child(even) {
+        clip-path: none;
+        text-align: center;
+    }
+    
+    .service-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 2rem;
+        float: none;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    .service-card:nth-child(even) .service-icon {
+        float: none;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    .service-icon svg {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .service-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .service-description {
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .service-features {
+        text-align: center;
+    }
+    
+    .service-features li {
+        font-size: 1rem;
+        padding: 0.6rem 0;
+        text-align: center;
+        padding-left: 0;
+    }
+    
+    .service-features li::before {
+        position: static;
+        display: inline-block;
+        margin-right: 0.5rem;
+        transform: none;
+    }
+    
+    .service-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        float: none;
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+    }
+    
+    .service-card:nth-child(even) .service-button {
+        float: none;
+    }
+    
+    /* インストラクターセクション */
+    .instructor-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .instructor-card {
+        padding: 1.5rem;
+    }
+    
+    .instructor-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .instructor-card p {
+        font-size: 0.9rem;
+    }
+    
+    /* コミュニティセクション */
+    .community-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .community-feature {
+        padding: 1rem;
+    }
+    
+    .community-feature h3 {
+        font-size: 1.3rem;
+    }
+    
+    .community-feature p {
+        font-size: 0.9rem;
+    }
+    
+    /* コンテナ調整 */
+    .hero-content,
+    .section-container,
+    .footer-container {
+        padding: 0 1rem;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* モバイルでの追加修正 */
+    .hero-section,
+    .section {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    
+    .hero-content,
+    .section-container {
+        padding: 0 1.5rem;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -2938,39 +3052,23 @@ body {
     }
 }
 
-/* セクション共通 */
-.section {
-    padding: 3rem 0;
+.hero-background-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    z-index: 1;
+    pointer-events: none;
 }
 
-.section-title {
-    font-size: 2.2rem;
+.background-logo-image {
+    width: 600px;
+    height: auto;
+    opacity: 0.1;
+    transition: all 0.8s ease;
 }
 
-.section-subtitle {
-    font-size: 1.1rem;
-}
-
-/* サービスセクション */
-.services-grid {
-    gap: 3rem;
-    margin-top: 3rem;
-    margin: 0 1rem;
-}
-
-.services-grid::before {
-    display: none;
-}
-
-.service-card {
-    padding: 2.5rem 1.5rem;
-    margin: 0;
-    clip-path: none;
-    text-align: center;
-}
-
-.service-card:nth-child(odd),
-.service-card:nth-child(even) {
-    clip-path: none;
-    text-align: center;
+.hero-section:hover .background-logo-image {
+    opacity: 0.32;
+    transform: scale(1.02);
 }
