@@ -3,7 +3,15 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/**'
   workflow_dispatch:
+
+# 重複実行を防ぐ
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 # 権限を明示的に設定
 permissions:
