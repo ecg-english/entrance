@@ -3,88 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECG English - レッスン関連ページ</title>
+    <title>ECG English - 留学体験を身近に</title>
+    <meta name="description" content="ECG Englishは、留学のハードルを下げて気軽な留学体験を提供するサービスです。オンラインコミュニティ、講師陣、トライアルレッスンで英語力向上と文化体験を。">
     <link rel="stylesheet" href="main-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="signboard">
-            <div class="sign-header">
-                <h1>ECG English</h1>
-                <div class="neon-line"></div>
+    <!-- ヘッダーナビゲーション -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">ECG English</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#instructors" class="nav-link">Instructors</a></li>
+                    <li class="nav-item"><a href="#community" class="nav-link">Community</a></li>
+                    <li class="nav-item"><a href="trial.html" class="nav-link">Trial</a></li>
+                    <li class="nav-item"><a href="class0.html" class="nav-link">Join Class0</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <!-- ヒーローセクション -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">留学体験を身近に</h1>
+                <p class="hero-subtitle">金銭的・時間的・心理的なハードルを下げて、気軽な留学体験を提供します</p>
+                <p class="hero-description">世界中から集まる様々な人たちとオフライン・オンラインで交流できる『留学空間』で、英語力向上と文化体験を楽しみませんか？</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="hero-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        サービスを見る
+                    </a>
+                    <a href="trial.html" class="hero-button secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        トライアルレッスン
+                    </a>
+                </div>
             </div>
-            
-            <div class="sign-content">
-                <div class="main-info">
-                    <h2>レッスン関連ページ</h2>
-                    <p>ECG Englishの各種サービスとレッスン申し込みページです。</p>
+        </section>
+
+        <!-- About セクション -->
+        <section id="about" class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">About ECG English</h2>
+                    <p class="section-subtitle">留学には金銭的・時間的・心理的な3つの高いハードルがあります。私たちはそれらをできる限り取り払って、気軽な留学体験ができるサービスを提供しています。</p>
                 </div>
                 
-                <div class="page-links">
-                    <a href="addon.html" class="page-link">
-                        <div class="link-icon">📦</div>
-                        <div class="link-text">
-                            <h3>アドオン</h3>
-                            <p>レッスンアドオンの詳細</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            </svg>
                         </div>
-                    </a>
-                    
-                    <a href="community.html" class="page-link">
-                        <div class="link-icon">🌍</div>
-                        <div class="link-text">
-                            <h3>オンラインコミュニティ</h3>
-                            <p>世界中の人々との交流</p>
+                        <h3 class="service-title">オフライン活動</h3>
+                        <p class="service-description">神戸三宮にて月・水・金に英語、土に日本語、日は毎週文化交流イベントを開催</p>
+                        <ul class="service-features">
+                            <li>• 英語レッスン（月・水・金）</li>
+                            <li>• 日本語レッスン（土）</li>
+                            <li>• 文化交流イベント（日）</li>
+                        </ul>
+                        <a href="community.html" class="service-button">詳細を見る</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            </svg>
                         </div>
-                    </a>
-                    
-                    <a href="instructor.html" class="page-link">
-                        <div class="link-icon">👨‍🏫</div>
-                        <div class="link-text">
-                            <h3>講師紹介</h3>
-                            <p>ECG Englishの講師陣</p>
-                        </div>
-                    </a>
-                    
-                    <a href="trial.html" class="page-link">
-                        <div class="link-icon">🎯</div>
-                        <div class="link-text">
-                            <h3>トライアルレッスン</h3>
-                            <p>初回限定3,000円</p>
-                        </div>
-                    </a>
-                    
-                    <a href="class0.html" class="page-link">
-                        <div class="link-icon">🚀</div>
-                        <div class="link-text">
-                            <h3>Class0 メンバー</h3>
-                            <p>留学空間への参加</p>
-                        </div>
-                    </a>
+                        <h3 class="service-title">オンラインコミュニティ</h3>
+                        <p class="service-description">365日24時間いつでもどこでも交流できるコミュニティページで世界中の人々と繋がれます</p>
+                        <ul class="service-features">
+                            <li>• 24時間アクセス可能</li>
+                            <li>• 世界中の人々と交流</li>
+                            <li>• 文化学習コンテンツ</li>
+                        </ul>
+                        <a href="https://ecg-english.github.io/language-community/" target="_blank" class="service-button">参加する</a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="sign-footer">
-                <a href="https://ecg-english.github.io/language-community/" target="_blank" class="sign-button">
-                    オンラインコミュニティへ
-                    <span class="button-arrow">→</span>
-                </a>
+        </section>
+
+        <!-- Services セクション -->
+        <section id="services" class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Services</h2>
+                    <p class="section-subtitle">あなたの英語力レベルと目標に合わせて、最適なサービスを提供します</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Class0 メンバー</h3>
+                        <p class="service-description">英語力に自信がある方のための留学空間プラン。オフライン・オンラインでの交流が通い放題</p>
+                        <ul class="service-features">
+                            <li>• 留学空間への通い放題</li>
+                            <li>• オンラインコミュニティ</li>
+                            <li>• 文化交流イベント</li>
+                        </ul>
+                        <a href="class0.html" class="service-button">申し込む</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Class1 メンバー</h3>
+                        <p class="service-description">Class0のサービスにマンツーマンレッスンが追加されたプラン。適切なフィードバックで英語力を向上</p>
+                        <ul class="service-features">
+                            <li>• Class0の全サービス</li>
+                            <li>• マンツーマンレッスン</li>
+                            <li>• 個別フィードバック</li>
+                        </ul>
+                        <a href="trial.html" class="service-button">トライアルから始める</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">トライアルレッスン</h3>
+                        <p class="service-description">初回限定3,000円で1回レッスンを受講。英語学習の相談や、サービスとの相性を確認できます</p>
+                        <ul class="service-features">
+                            <li>• 初回限定3,000円</li>
+                            <li>• 1回レッスン</li>
+                            <li>• 学習相談可能</li>
+                        </ul>
+                        <a href="trial.html" class="service-button">申し込む</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instructors セクション -->
+        <section id="instructors" class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Instructors</h2>
+                    <p class="section-subtitle">経験豊富で情熱的な講師陣が、あなたの英語学習をサポートします</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">講師陣</h3>
+                        <p class="service-description">たいち、りょうや、たかや、まりの、せいら、はるかの6名の講師が在籍</p>
+                        <ul class="service-features">
+                            <li>• 6名の専門講師</li>
+                            <li>• 個別指導対応</li>
+                            <li>• 文化理解サポート</li>
+                        </ul>
+                        <a href="instructor.html" class="service-button">講師紹介を見る</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">レッスン内容</h3>
+                        <p class="service-description">英語力向上だけでなく、文化理解も重視した総合的なレッスンを提供</p>
+                        <ul class="service-features">
+                            <li>• 英語力向上</li>
+                            <li>• 文化理解</li>
+                            <li>• 実践的な会話</li>
+                        </ul>
+                        <a href="trial.html" class="service-button">体験する</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community セクション -->
+        <section id="community" class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Online Community</h2>
+                    <p class="section-subtitle">世界中の人々と繋がり、英語力向上と文化体験を楽しむオンラインコミュニティ</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">24時間アクセス</h3>
+                        <p class="service-description">いつでもどこでも世界中の人々と交流できるオンラインコミュニティ</p>
+                        <ul class="service-features">
+                            <li>• 365日24時間利用可能</li>
+                            <li>• 多国籍メンバー</li>
+                            <li>• 文化学習コンテンツ</li>
+                        </ul>
+                        <a href="https://ecg-english.github.io/language-community/" target="_blank" class="service-button">参加する</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">文化体験</h3>
+                        <p class="service-description">英語学習だけでなく、文化学習も重視した総合的な体験を提供</p>
+                        <ul class="service-features">
+                            <li>• 文化テーマのポッドキャスト</li>
+                            <li>• 文化記事の配信</li>
+                            <li>• リアルな文化交流</li>
+                        </ul>
+                        <a href="community.html" class="service-button">詳細を見る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ECG English</h3>
+                    <p>留学体験を身近に提供するサービス</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: ecg_english@nauticalmile.jp</p>
+                    <p>Instagram: <a href="https://www.instagram.com/english_ecg/" target="_blank">@english_ecg</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links</h3>
+                    <p><a href="https://ecg-english.github.io/language-community/" target="_blank">オンラインコミュニティ</a></p>
+                    <p><a href="trial.html">トライアルレッスン</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ECG English. All rights reserved.</p>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script>
-        // ページリンクのホバー効果
-        document.querySelectorAll('.page-link').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-            });
-            
-            link.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
-        
+
+        // ヘッダーのアクティブ状態管理
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
         // スクロールアニメーション
         function addScrollAnimations() {
             const observer = new IntersectionObserver((entries) => {
@@ -96,11 +317,11 @@
                 });
             });
             
-            document.querySelectorAll('.page-link').forEach((link, index) => {
-                link.style.opacity = '0';
-                link.style.transform = 'translateY(20px)';
-                link.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-                observer.observe(link);
+            document.querySelectorAll('.service-card').forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `opacity 0.8s ease ${index * 0.1}s, transform 0.8s ease ${index * 0.1}s`;
+                observer.observe(card);
             });
         }
         
