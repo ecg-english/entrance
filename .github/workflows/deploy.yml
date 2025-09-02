@@ -15,7 +15,7 @@ concurrency:
 
 # 権限を明示的に設定
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -30,14 +30,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     
-    # 既存のデプロイメントをキャンセル
     steps:
-    - name: Cancel Previous Runs
-      uses: styfle/cancel-workflow-action@0.12.1
-      with:
-        workflow_name: ${{ github.workflow }}
-        access_token: ${{ github.token }}
-    
     - name: Checkout
       uses: actions/checkout@v4
       
