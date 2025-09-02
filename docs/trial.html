@@ -24,7 +24,7 @@
             <div class="sign-content trial-content">
                 <div class="trial-description" id="trialDescription">
                     初回限定3,000円/回の単発お試しレッスンで、自分に本当にあっているのかを一度体験してみてください。<br><br>
-                    英語学習のお悩み相談として活用いただいても構いません。お気軽にお申し込みください。<br>
+                    言語学習のお悩み相談として活用いただいても構いません。お気軽にお申し込みください。<br>
                 </div>
                 <hr>
                 <br><br>
@@ -37,6 +37,11 @@
                     <div class="form-group">
                         <label class="form-label" for="email" id="emailLabel">メールアドレス</label>
                         <input type="email" id="email" name="entry.1138256236" class="form-input" placeholder="example@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="learningLanguage" id="learningLanguageLabel">学習予定の言語（英語・日本語以外も検討可）</label>
+                        <input type="text" id="learningLanguage" name="entry.532950258" class="form-input" placeholder="例：英語、日本語、中国語など" required>
                     </div>
                     
                     <div class="form-group">
@@ -104,9 +109,10 @@
         const languages = {
             ja: {
                 pageTitle: 'Trial Lesson',
-                trialDescription: '初回限定3,000円/回の単発お試しレッスンで、自分に本当にあっているのかを一度体験してみてください。<br><br>英語学習のお悩み相談として活用いただいても構いません。お気軽にお申し込みください。<br>',
+                trialDescription: '初回限定3,000円/回の単発お試しレッスンで、自分に本当にあっているのかを一度体験してみてください。<br><br>言語学習のお悩み相談として活用いただいても構いません。お気軽にお申し込みください。<br>',
                 nameLabel: 'お名前',
                 emailLabel: 'メールアドレス',
+                learningLanguageLabel: '学習予定の言語（英語・日本語以外も検討可）',
                 dateTimeLabel: '希望日時（3つ選択してください）',
                 timeSelectionTitle: '時間を選択してください',
                 selectedSlotsTitle: '選択された候補日時',
@@ -120,15 +126,17 @@
                 sat: 'Sat',
                 namePlaceholder: 'フルネームを入力してください',
                 emailPlaceholder: 'example@email.com',
+                learningLanguagePlaceholder: '例：英語、日本語、中国語など',
                 maxSlotsMessage: '最大3つまで選択できます。',
                 duplicateSlotMessage: '既に選択されている時間です。',
                 selectDateTimeMessage: '日時を選択してください。'
             },
             en: {
                 pageTitle: 'Trial Lesson',
-                trialDescription: 'Experience our trial lesson for just ¥3,000 for first-time users to see if our service is right for you.<br><br>You can also use this as a consultation for Japanese learning concerns. Please feel free to apply.<br>',
+                trialDescription: 'Experience our trial lesson for just ¥3,000 for first-time users to see if our service is right for you.<br><br>You can also use this as a consultation for language learning concerns. Please feel free to apply.<br>',
                 nameLabel: 'Full Name',
                 emailLabel: 'Email Address',
+                learningLanguageLabel: 'Language to Learn (English, Japanese, and other languages considered)',
                 dateTimeLabel: 'Preferred Date & Time (Please select 3 options)',
                 timeSelectionTitle: 'Please select a time',
                 selectedSlotsTitle: 'Selected Date & Time Options',
@@ -142,6 +150,7 @@
                 sat: 'Sat',
                 namePlaceholder: 'Please enter your full name',
                 emailPlaceholder: 'example@email.com',
+                learningLanguagePlaceholder: 'e.g., English, Japanese, Chinese, etc.',
                 maxSlotsMessage: 'You can select up to 3 options.',
                 duplicateSlotMessage: 'This time slot is already selected.',
                 selectDateTimeMessage: 'Please select date and time.'
@@ -165,6 +174,7 @@
             document.getElementById('trialDescription').innerHTML = content.trialDescription;
             document.getElementById('nameLabel').textContent = content.nameLabel;
             document.getElementById('emailLabel').textContent = content.emailLabel;
+            document.getElementById('learningLanguageLabel').textContent = content.learningLanguageLabel;
             document.getElementById('dateTimeLabel').textContent = content.dateTimeLabel;
             document.getElementById('timeSelectionTitle').textContent = content.timeSelectionTitle;
             document.getElementById('selectedSlotsTitle').textContent = content.selectedSlotsTitle;
@@ -182,6 +192,7 @@
             // プレースホルダーの更新
             document.getElementById('name').placeholder = content.namePlaceholder;
             document.getElementById('email').placeholder = content.emailPlaceholder;
+            document.getElementById('learningLanguage').placeholder = content.learningLanguagePlaceholder;
         }
 
         // 言語切り替えタブのイベントリスナー
@@ -402,7 +413,14 @@
             
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+            const learningLanguage = document.getElementById('learningLanguage').value;
             const slots = calendar.getFormattedSlots();
+            
+            if (!name || !email || !learningLanguage) {
+                const message = document.documentElement.lang === 'ja' ? 'すべての必須項目を入力してください。' : 'Please fill in all required fields.';
+                alert(message);
+                return;
+            }
             
             if (slots === '') {
                 const message = document.documentElement.lang === 'ja' ? '日時を選択してください。' : 'Please select date and time.';
