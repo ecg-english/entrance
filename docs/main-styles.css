@@ -2682,3 +2682,347 @@ body {
         font-size: 1.4rem;
     }
 }
+
+/* index.htmlの主要なレスポンシブ対応 */
+@media (max-width: 768px) {
+    /* ヘッダー */
+    .header-container {
+        padding: 0 1rem;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    /* ヒーローセクション */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .hero-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+    
+    /* セクション共通 */
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    /* サービスセクション */
+    .services-grid {
+        gap: 3rem;
+        margin-top: 3rem;
+        margin: 0 1rem;
+    }
+    
+    .services-grid::before {
+        display: none;
+    }
+    
+    .service-card {
+        padding: 2.5rem 1.5rem;
+        margin: 0;
+        clip-path: none;
+        text-align: center;
+    }
+    
+    .service-card:nth-child(odd),
+    .service-card:nth-child(even) {
+        clip-path: none;
+        text-align: center;
+    }
+    
+    .service-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 2rem;
+        float: none;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    .service-card:nth-child(even) .service-icon {
+        float: none;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    .service-icon svg {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .service-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .service-description {
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .service-features {
+        text-align: center;
+    }
+    
+    .service-features li {
+        font-size: 1rem;
+        padding: 0.6rem 0;
+        text-align: center;
+        padding-left: 0;
+    }
+    
+    .service-features li::before {
+        position: static;
+        display: inline-block;
+        margin-right: 0.5rem;
+        transform: none;
+    }
+    
+    .service-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        float: none;
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+    }
+    
+    .service-card:nth-child(even) .service-button {
+        float: none;
+    }
+    
+    /* インストラクターセクション */
+    .instructor-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .instructor-card {
+        padding: 1.5rem;
+    }
+    
+    .instructor-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .instructor-card p {
+        font-size: 0.9rem;
+    }
+    
+    /* コミュニティセクション */
+    .community-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .community-feature {
+        padding: 1.5rem;
+    }
+    
+    .community-feature h3 {
+        font-size: 1.3rem;
+    }
+    
+    .community-feature p {
+        font-size: 0.9rem;
+    }
+    
+    /* コンテナ調整 */
+    .hero-content,
+    .section-container,
+    .footer-container {
+        padding: 0 1rem;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* モバイルでの追加修正 */
+    .hero-section,
+    .section {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    
+    .hero-content,
+    .section-container {
+        padding: 0 1.5rem;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* さらに小さな画面サイズでの対応 */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+    }
+    
+    .hero-content,
+    .section-container,
+    .footer-container {
+        padding: 0 1rem;
+    }
+    
+    .hero-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .footer-section {
+        padding: 1rem;
+        margin: 0 0.5rem;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .instructor-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .instructor-card {
+        padding: 1rem;
+    }
+    
+    .community-features {
+        gap: 1rem;
+    }
+    
+    .community-feature {
+        padding: 1rem;
+    }
+}
+
+/* モバイルメニュー */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: #1e293b;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* モバイルメニューのレスポンシブ対応 */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.95) 0%, 
+            rgba(241, 245, 249, 0.9) 100%);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+        flex-direction: column;
+        padding: 2rem 0;
+        gap: 1rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    .nav-item {
+        text-align: center;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        border-radius: 0;
+    }
+    
+    .nav-link:hover {
+        background: rgba(59, 130, 246, 0.1);
+        color: #1e293b;
+    }
+}
