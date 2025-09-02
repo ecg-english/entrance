@@ -1,0 +1,18 @@
+# GitHub Pagesの自動ビルドを無効化
+name: Disable GitHub Pages Auto Build
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'docs/**'
+      - '.github/workflows/deploy.yml'
+
+jobs:
+  disable-auto-build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Skip auto build
+      run: |
+        echo "Skipping automatic GitHub Pages build"
+        echo "Using custom deployment workflow instead" 

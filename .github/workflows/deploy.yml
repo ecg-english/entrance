@@ -8,9 +8,9 @@ on:
       - '.github/workflows/**'
   workflow_dispatch:
 
-# 重複実行を防ぐ
+# 重複実行を防ぐ（より厳密な設定）
 concurrency:
-  group: "pages"
+  group: "pages-deploy"
   cancel-in-progress: true
 
 # 権限を明示的に設定
@@ -30,7 +30,14 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     
+    # 既存のデプロイメントをキャンセル
     steps:
+    - name: Cancel Previous Runs
+      uses: styfle/cancel-workflow-action@0.12.1
+      with:
+        workflow_name: ${{ github.workflow }}
+        access_token: ${{ github.token }}
+    
     - name: Checkout
       uses: actions/checkout@v4
       
