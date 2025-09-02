@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes subtleGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes arrowSlide {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(3px);
+    }
+}
+
+@keyframes priceHighlight {
+    0%, 100% {
+        color: #e5e5e5;
+    }
+    50% {
+        color: #ffffff;
+    }
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.container {
+    width: 100%;
+    animation: fadeInScale 1s ease-out;
+    margin: 0;
+}
+
+.signboard {
+    background: linear-gradient(135deg, #1e293b 0%, #0d2c5d 100%);
+    border-radius: 20px;
+    padding: 48px 40px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    text-align: center;
+    position: relative;
+    animation: subtleGlow 4s ease-in-out infinite;
+}
+
+.signboard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, transparent 0%, rgba(255, 255, 255, 0.02) 50%, transparent 100%);
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.sign-header {
+    margin-bottom: 40px;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.sign-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+}
+
+.neon-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    border-radius: 1px;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.sign-content {
+    margin-bottom: 48px;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.current-plan {
+    flex: 1;
+    text-align: left;
+    animation: slideInLeft 0.8s ease-out 0.6s both;
+}
+
+.price-section {
+    flex: 1;
+    text-align: right;
+    animation: slideInRight 0.8s ease-out 0.8s both;
+}
+
+.price2-section {
+    flex: 1;
+    text-align: center;
+    animation: slideInRight 0.8s ease-out 0.8s both;
+}
+
+.label, .price-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+}
+
+.value {
+    display: block;
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.price-value {
+    display: block;
+    font-size: 2.4rem;
+    color: #e5e5e5;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: priceHighlight 3s ease-in-out infinite;
+}
+
+.sign-footer {
+    animation: bounceIn 0.8s ease-out 1s both;
+}
+
+.sign-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 20px 40px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 8px 20px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.sign-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.sign-button:hover::before {
+    left: 100%;
+}
+
+.sign-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 30px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+    background: linear-gradient(145deg, #f8f8f8 0%, #ffffff 100%);
+}
+
+.button-arrow {
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: arrowSlide 2s ease-in-out infinite;
+}
+
+.sign-button:hover .button-arrow {
+    animation: arrowSlide 0.8s ease-in-out infinite;
+}
+
+@media (max-width: 480px) {
+    .signboard {
+        padding: 36px 24px;
+    }
+    
+    .sign-header h1 {
+        font-size: 2.4rem;
+    }
+    
+    .main-info {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+    
+    .current-plan, .price-section {
+        text-align: center;
+    }
+    
+    .price-value {
+        font-size: 2rem;
+    }
+    
+    .sign-button {
+        padding: 18px 32px;
+        font-size: 1rem;
+    }
+} 
