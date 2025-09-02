@@ -2394,6 +2394,9 @@ body {
     padding: 0 2rem;
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-content {
@@ -2403,6 +2406,7 @@ body {
     margin-bottom: 4rem;
     position: relative;
     justify-items: center;
+    text-align: center;
 }
 
 .footer-content::before {
@@ -2439,6 +2443,10 @@ body {
     box-shadow: 
         0 20px 40px rgba(0, 0, 0, 0.08),
         0 0 0 1px rgba(59, 130, 246, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-section::before {
@@ -2530,6 +2538,8 @@ body {
     display: block;
     text-align: center;
     margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-section a {
@@ -2850,6 +2860,10 @@ body {
         clip-path: none;
         box-shadow: none;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
     .footer-section h3 {
@@ -2955,6 +2969,10 @@ body {
         clip-path: none;
         box-shadow: none;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
     .footer-section h3 {
