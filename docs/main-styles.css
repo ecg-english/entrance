@@ -2085,31 +2085,33 @@ body {
 
 /* サービスセクション */
 .services-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    margin-top: 5rem;
-    position: relative;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4rem !important;
+    margin-top: 5rem !important;
+    position: relative !important;
+    width: 100% !important;
 }
 
 .service-card {
-    position: relative;
+    position: relative !important;
     background: linear-gradient(135deg, 
         rgba(255, 255, 255, 0.8) 0%, 
         rgba(241, 245, 249, 0.6) 50%, 
-        rgba(226, 232, 240, 0.4) 100%);
-    border: none;
-    border-radius: 0;
-    padding: 4rem 3rem;
-    text-align: left;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(30px);
-    position: relative;
-    overflow: hidden;
-    box-shadow: none;
-    margin: 0 2rem;
-    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
-    border: 1px solid rgba(100, 116, 139, 0.1);
+        rgba(226, 232, 240, 0.4) 100%) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 4rem 3rem !important;
+    text-align: left !important;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    backdrop-filter: blur(30px) !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    margin: 0 2rem !important;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%) !important;
+    border: 1px solid rgba(100, 116, 139, 0.1) !important;
+    display: block !important;
+    min-height: 300px !important;
 }
 
 .service-card:nth-child(odd) {
@@ -2175,12 +2177,20 @@ body {
 }
 
 .service-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 2rem;
-    float: none;
-    margin-right: 0;
-    margin-left: 0;
+    width: 80px !important;
+    height: 80px !important;
+    margin: 0 auto 2rem !important;
+    float: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.1) 0%, 
+        rgba(59, 130, 246, 0.05) 100%) !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(59, 130, 246, 0.2) !important;
 }
 
 .service-card:nth-child(even) .service-icon {
@@ -2190,8 +2200,10 @@ body {
 }
 
 .service-icon svg {
-    width: 45px;
-    height: 45px;
+    width: 45px !important;
+    height: 45px !important;
+    fill: #3b82f6 !important;
+    transition: all 0.3s ease !important;
 }
 
 .service-title {
