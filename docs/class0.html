@@ -8,14 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 言語切り替えタブ -->
-    <div class="language-switcher">
-        <button class="language-tab active" onclick="switchLanguage('ja')">日本語</button>
-        <button class="language-tab" onclick="switchLanguage('en')">English</button>
-    </div>
-    
     <div class="container class0-container">
         <div class="signboard class0-signboard">
+            <!-- 言語切り替えタブ -->
+            <div class="language-switcher">
+                <button class="language-tab active" onclick="switchLanguage('ja')">日本語</button>
+                <button class="language-tab" onclick="switchLanguage('en')">English</button>
+            </div>
             <div class="sign-header class0-header">
                 <h1 data-ja="Class0 Members" data-en="Class0 Members">Class0 Members</h1>
                 <div class="neon-line class0-neon-line"></div>
@@ -92,6 +91,7 @@
                                 <h3 data-ja="週末文化交流イベント" data-en="Weekend Cultural Exchange Events">週末文化交流イベント</h3>
                                 <p data-ja="毎週日曜日の多様な文化体験イベント" data-en="Diverse cultural experience events every Sunday">毎週日曜日の多様な文化体験イベント</p>
                             </div>
+                            
                             <div class="culture-item">
                                 <div class="culture-icon">
                                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -256,11 +256,22 @@
             
             // HTMLコンテンツを含む要素の特別処理
             document.querySelectorAll('[data-ja][data-en]').forEach(element => {
-                if (element.innerHTML.includes('<strong>') || element.innerHTML.includes('<a ')) {
+                const jaContent = element.getAttribute('data-ja');
+                const enContent = element.getAttribute('data-en');
+                
+                // HTMLタグが含まれているかチェック
+                if (jaContent.includes('<') || enContent.includes('<')) {
                     if (lang === 'ja') {
-                        element.innerHTML = element.getAttribute('data-ja');
+                        element.innerHTML = jaContent;
                     } else {
-                        element.innerHTML = element.getAttribute('data-en');
+                        element.innerHTML = enContent;
+                    }
+                } else {
+                    // 通常のテキストコンテンツ
+                    if (lang === 'ja') {
+                        element.textContent = jaContent;
+                    } else {
+                        element.textContent = enContent;
                     }
                 }
             });

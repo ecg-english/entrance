@@ -1348,11 +1348,15 @@ body::before {
 }
 
 /* Class0ページ用の言語切り替えスタイル */
-.class0-container .language-switcher {
+.class0-signboard .language-switcher {
     position: absolute;
     top: 20px;
     right: 20px;
     z-index: 100;
+}
+
+.class0-signboard {
+    position: relative;
 }
 .class0-container {
     width: 100%;
