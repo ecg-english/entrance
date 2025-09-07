@@ -1,5 +1,44 @@
 /* オンラインコミュニティページ用スタイル */
 
+/* 新しいアニメーション定義 */
+@keyframes featureSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes iconPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 /* 背景スタイル - styles.cssから継承 */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -100,54 +139,148 @@ body::before {
 
 .community-features {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-bottom: 40px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .community-feature {
-    text-align: center;
-    padding: 24px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+    text-align: left;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    animation: featureSlideIn 0.8s ease-out both;
+}
+
+.community-feature:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.community-feature:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.community-feature:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.community-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.8s ease;
+    z-index: 1;
+}
+
+.community-feature:hover::before {
+    left: 100%;
 }
 
 .community-feature:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .feature-icon {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto 16px;
-    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 0 0 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     filter: brightness(0) invert(1);
     opacity: 0.9;
-    transition: all 0.3s ease;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    z-index: 2;
+    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    animation: iconPulse 3s ease-in-out infinite;
+}
+
+.feature-icon svg {
+    width: 32px;
+    height: 32px;
+    transition: all 0.6s ease;
 }
 
 .community-feature:hover .feature-icon {
     opacity: 1;
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    animation: none;
+}
+
+.community-feature:hover .feature-icon svg {
+    transform: scale(1.1);
 }
 
 .feature-title {
     color: #ffffff;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.6s ease;
 }
 
 .feature-description {
-    color: #b0b0b0;
-    font-size: 0.95rem;
-    line-height: 1.6;
+    color: #d0d0d0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    position: relative;
+    z-index: 2;
+    transition: all 0.6s ease;
+    font-weight: 400;
+}
+
+.community-feature:hover .feature-title {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateX(8px);
+}
+
+.community-feature:hover .feature-description {
+    color: #e5e5e5;
+    transform: translateX(8px);
 }
 
 .community-footer {
@@ -1173,7 +1306,9 @@ body::before {
 @media (max-width: 768px) {
     .community-features {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 30px;
+        max-width: 100%;
+        margin: 0 20px 50px 20px;
     }
     
     .community-signboard {
@@ -1187,6 +1322,30 @@ body::before {
     .community-description {
         font-size: 1rem;
         text-align: center;
+    }
+    
+    .community-feature {
+        padding: 30px 24px;
+        text-align: center;
+    }
+    
+    .feature-icon {
+        margin: 0 auto 20px auto;
+    }
+    
+    .feature-title {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    
+    .feature-description {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .community-feature:hover .feature-title,
+    .community-feature:hover .feature-description {
+        transform: translateX(0);
     }
     
     .community-button {
@@ -1291,13 +1450,30 @@ body::before {
         font-size: 2.2rem;
     }
     
+    .community-features {
+        margin: 0 10px 50px 10px;
+        gap: 25px;
+    }
+    
     .community-feature {
-        padding: 20px;
+        padding: 25px 20px;
+        text-align: center;
     }
     
     .feature-icon {
-        width: 40px;
-        height: 40px;
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 18px auto;
+    }
+    
+    .feature-title {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    
+    .feature-description {
+        font-size: 0.95rem;
+        text-align: center;
     }
     
     .instructor-grid {
