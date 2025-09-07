@@ -8,21 +8,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 言語切り替えタブ -->
+    <div class="language-switcher">
+        <button class="language-tab active" onclick="switchLanguage('ja')">日本語</button>
+        <button class="language-tab" onclick="switchLanguage('en')">English</button>
+    </div>
+    
     <div class="container class0-container">
         <div class="signboard class0-signboard">
             <div class="sign-header class0-header">
-                <h1>Class0 Members</h1>
+                <h1 data-ja="Class0 Members" data-en="Class0 Members">Class0 Members</h1>
                 <div class="neon-line class0-neon-line"></div>
             </div>
             
             <div class="sign-content class0-content">
-                <div class="class0-description">
+                <div class="class0-description" data-ja="留学の3つのハードル（金銭・時間・心理）を取り除き、気軽に留学体験ができる『留学空間』。神戸三宮でのオフライン交流と24時間オンラインコミュニティで、世界中の人々と自然な英語環境を構築できます。" data-en="Break down the three barriers to studying abroad (financial, time, and psychological) with our accessible 'Study Abroad Space'. Build a natural Japanese language environment through offline interactions in Kobe Sannomiya and our 24/7 online community with people from around the world.">
                     留学の3つのハードル（金銭・時間・心理）を取り除き、気軽に留学体験ができる『留学空間』。神戸三宮でのオフライン交流と24時間オンラインコミュニティで、世界中の人々と自然な英語環境を構築できます。
                 </div>
                 
                 <div class="class0-section">
-                    <h2>オフライン・オンラインでの交流</h2>
-                    <p>オフラインとしては神戸三宮にて月・水・金に英語、土に日本語、日は毎週文化交流イベントを開催。オンラインとしては365日24時間いつでもどこでも交流できるコミュニティページで世界中の人々と繋がれます。（→詳しくは<a href="community.html" style="color: #4a90e2; text-decoration: none;">Online Community</a>）</p>
+                    <h2 data-ja="オフライン・オンラインでの交流" data-en="Offline & Online Interaction">オフライン・オンラインでの交流</h2>
+                    <p data-ja="オフラインとしては神戸三宮にて月・水・金に英語、土に日本語、日は毎週文化交流イベントを開催。オンラインとしては365日24時間いつでもどこでも交流できるコミュニティページで世界中の人々と繋がれます。（→詳しくは<a href='community.html' style='color: #4a90e2; text-decoration: none;'>Online Community</a>）" data-en="Offline: We host English sessions on Mon/Wed/Fri, Japanese sessions on Sat, and cultural exchange events every Sunday in Kobe Sannomiya. Online: Connect with people worldwide 24/7 through our community page. (→ See more at <a href='community.html' style='color: #4a90e2; text-decoration: none;'>Online Community</a>)">
+                        オフラインとしては神戸三宮にて月・水・金に英語、土に日本語、日は毎週文化交流イベントを開催。オンラインとしては365日24時間いつでもどこでも交流できるコミュニティページで世界中の人々と繋がれます。（→詳しくは<a href="community.html" style="color: #4a90e2; text-decoration: none;">Online Community</a>）
+                    </p>
                 </div>
                 
                 <div class="class0-features">
@@ -32,8 +40,8 @@
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
                             </svg>
                         </div>
-                        <h3>留学への憧れを現実に</h3>
-                        <p>留学に行きたくても行けない方のための英語力向上・友達づくり・世界観拡大の場</p>
+                        <h3 data-ja="留学への憧れを現実に" data-en="Make Your Study Abroad Dream Reality">留学への憧れを現実に</h3>
+                        <p data-ja="留学に行きたくても行けない方のための英語力向上・友達づくり・世界観拡大の場" data-en="A space for those who want to study abroad but can't - improve your Japanese skills, make friends, and expand your worldview">留学に行きたくても行けない方のための英語力向上・友達づくり・世界観拡大の場</p>
                     </div>
                     
                     <div class="class0-feature-card">
@@ -42,8 +50,8 @@
                                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                             </svg>
                         </div>
-                        <h3>留学準備の自信構築</h3>
-                        <p>留学を控えた方の事前準備・自信構築・日本での慣れのための実践環境</p>
+                        <h3 data-ja="留学準備の自信構築" data-en="Build Confidence for Study Abroad">留学準備の自信構築</h3>
+                        <p data-ja="留学を控えた方の事前準備・自信構築・日本での慣れのための実践環境" data-en="Practical environment for pre-study abroad preparation, confidence building, and getting accustomed to Japanese culture">留学を控えた方の事前準備・自信構築・日本での慣れのための実践環境</p>
                     </div>
                     
                     <div class="class0-feature-card">
@@ -52,24 +60,28 @@
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                             </svg>
                         </div>
-                        <h3>帰国後のスキル維持</h3>
-                        <p>留学経験者の英語力維持・継続的な国際交流・日本での実践機会の確保</p>
+                        <h3 data-ja="帰国後のスキル維持" data-en="Maintain Skills After Return">帰国後のスキル維持</h3>
+                        <p data-ja="留学経験者の英語力維持・継続的な国際交流・日本での実践機会の確保" data-en="Maintain Japanese language skills for study abroad returnees, continue international exchange, and secure practical opportunities in Japan">留学経験者の英語力維持・継続的な国際交流・日本での実践機会の確保</p>
                     </div>
                 </div>
                 
                 <div class="class0-highlight-section">
                     <div class="highlight-content">
-                        <h2>科学的根拠に基づく英語力向上</h2>
+                        <h2 data-ja="科学的根拠に基づく英語力向上" data-en="Scientifically-Based Japanese Language Improvement">科学的根拠に基づく英語力向上</h2>
                         <div class="highlight-text">
-                            <p><strong>第二言語習得論</strong>により、アウトプットの重要性が科学的に証明されています。インプットした知識を実際に使うことで、英語が定着します。</p>
-                            <p><strong>多国籍・大人数環境</strong>で、海外での実践的な会話を想定した多様なコミュニケーションを体験。1対1レッスンでは得られない、リアルな英語環境を構築します。</p>
+                            <p data-ja="<strong>第二言語習得論</strong>により、アウトプットの重要性が科学的に証明されています。インプットした知識を実際に使うことで、英語が定着します。" data-en="<strong>Second Language Acquisition Theory</strong> scientifically proves the importance of output. Japanese language skills are solidified by actually using the knowledge you've input.">
+                                <strong>第二言語習得論</strong>により、アウトプットの重要性が科学的に証明されています。インプットした知識を実際に使うことで、英語が定着します。
+                            </p>
+                            <p data-ja="<strong>多国籍・大人数環境</strong>で、海外での実践的な会話を想定した多様なコミュニケーションを体験。1対1レッスンでは得られない、リアルな英語環境を構築します。" data-en="Experience diverse communication in a <strong>multinational, large-group environment</strong> that simulates practical conversations abroad. Build a real Japanese language environment that you can't get from one-on-one lessons.">
+                                <strong>多国籍・大人数環境</strong>で、海外での実践的な会話を想定した多様なコミュニケーションを体験。1対1レッスンでは得られない、リアルな英語環境を構築します。
+                            </p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="class0-culture-section">
                     <div class="culture-content">
-                        <h2>文化理解で深まるコミュニケーション</h2>
+                        <h2 data-ja="文化理解で深まるコミュニケーション" data-en="Deeper Communication Through Cultural Understanding">文化理解で深まるコミュニケーション</h2>
                         <div class="culture-features">
                             <div class="culture-item">
                                 <div class="culture-icon">
@@ -77,8 +89,8 @@
                                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                                     </svg>
                                 </div>
-                                <h3>週末文化交流イベント</h3>
-                                <p>毎週日曜日の多様な文化体験イベント</p>
+                                <h3 data-ja="週末文化交流イベント" data-en="Weekend Cultural Exchange Events">週末文化交流イベント</h3>
+                                <p data-ja="毎週日曜日の多様な文化体験イベント" data-en="Diverse cultural experience events every Sunday">毎週日曜日の多様な文化体験イベント</p>
                             </div>
                             <div class="culture-item">
                                 <div class="culture-icon">
@@ -86,8 +98,8 @@
                                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
                                     </svg>
                                 </div>
-                                <h3>文化学習コンテンツ</h3>
-                                <p>ポッドキャスト・記事・オンラインコミュニティ</p>
+                                <h3 data-ja="文化学習コンテンツ" data-en="Cultural Learning Content">文化学習コンテンツ</h3>
+                                <p data-ja="ポッドキャスト・記事・オンラインコミュニティ" data-en="Podcasts, articles, and online community">ポッドキャスト・記事・オンラインコミュニティ</p>
                             </div>
                             <div class="culture-item">
                                 <div class="culture-icon">
@@ -95,8 +107,8 @@
                                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                                     </svg>
                                 </div>
-                                <h3>AI時代の真のコミュニケーション</h3>
-                                <p>翻訳機では得られない「仲良くなれる度」を最大化</p>
+                                <h3 data-ja="AI時代の真のコミュニケーション" data-en="True Communication in the AI Era">AI時代の真のコミュニケーション</h3>
+                                <p data-ja="翻訳機では得られない「仲良くなれる度」を最大化" data-en="Maximize the 'ability to connect' that translation devices cannot provide">翻訳機では得られない「仲良くなれる度」を最大化</p>
                             </div>
                         </div>
                     </div>
@@ -104,36 +116,40 @@
                 
                 <div class="class0-stepup-section">
                     <div class="stepup-content">
-                        <h2>さらに上を目指すなら Class1</h2>
+                        <h2 data-ja="さらに上を目指すなら Class1" data-en="Aim Higher with Class1">さらに上を目指すなら Class1</h2>
                         <div class="stepup-description">
-                            <p>外国人との会話にまだハードルを感じる方、適切なフィードバックで正しい英語を身につけたい方におすすめです。</p>
+                            <p data-ja="外国人との会話にまだハードルを感じる方、適切なフィードバックで正しい英語を身につけたい方におすすめです。" data-en="Recommended for those who still feel barriers when talking with Japanese people, or want to learn proper Japanese with appropriate feedback.">
+                                外国人との会話にまだハードルを感じる方、適切なフィードバックで正しい英語を身につけたい方におすすめです。
+                            </p>
                             <div class="stepup-cycle">
                                 <div class="cycle-item">
                                     <div class="cycle-icon">1</div>
-                                    <span>マンツーマンレッスン</span>
+                                    <span data-ja="マンツーマンレッスン" data-en="One-on-One Lesson">マンツーマンレッスン</span>
                                 </div>
                                 <div class="cycle-arrow">→</div>
                                 <div class="cycle-item">
                                     <div class="cycle-icon">2</div>
-                                    <span>みんなと話す</span>
+                                    <span data-ja="みんなと話す" data-en="Talk with Everyone">みんなと話す</span>
                                 </div>
                                 <div class="cycle-arrow">→</div>
                                 <div class="cycle-item">
                                     <div class="cycle-icon">3</div>
-                                    <span>さらに学習</span>
+                                    <span data-ja="さらに学習" data-en="Further Learning">さらに学習</span>
                                 </div>
                                 <div class="cycle-arrow">→</div>
                                 <div class="cycle-item">
                                     <div class="cycle-icon">4</div>
-                                    <span>レッスン</span>
+                                    <span data-ja="レッスン" data-en="Lesson">レッスン</span>
                                 </div>
                             </div>
-                            <p class="trial-info">まずは<strong>初回限定3,000円</strong>のトライアルレッスンでお試しください。無理な勧誘は一切ありません。</p>
+                            <p class="trial-info" data-ja="まずは<strong>初回限定3,000円</strong>のトライアルレッスンでお試しください。無理な勧誘は一切ありません。" data-en="Try our <strong>first-time limited 3,000 yen</strong> trial lesson. No pressure sales at all.">
+                                まずは<strong>初回限定3,000円</strong>のトライアルレッスンでお試しください。無理な勧誘は一切ありません。
+                            </p>
                         </div>
                         
                         <div class="cta-buttons">
                             <a href="trial.html" class="cta-button">
-                                <span class="button-text">トライアル申込はこちら！</span>
+                                <span class="button-text" data-ja="トライアル申込はこちら！" data-en="Apply for Trial Here!">トライアル申込はこちら！</span>
                                 <span class="button-arrow cta-button-arrow">→</span>
                             </a>
                         </div>
@@ -142,53 +158,55 @@
                 
                 <div class="class0-direct-section">
                     <div class="direct-content">
-                        <h2>自信がある方は直接 Class0 へ</h2>
-                        <p>英語力に自信があり、すぐに実践的な会話を始めたい方、外国人の友達を作りたい方は、そのままClass0に参加できます。</p>
+                        <h2 data-ja="自信がある方は直接 Class0 へ" data-en="Confident? Join Class0 Directly">自信がある方は直接 Class0 へ</h2>
+                        <p data-ja="英語力に自信があり、すぐに実践的な会話を始めたい方、外国人の友達を作りたい方は、そのままClass0に参加できます。" data-en="If you're confident in your Japanese skills and want to start practical conversations immediately, or want to make Japanese friends, you can join Class0 directly.">
+                            英語力に自信があり、すぐに実践的な会話を始めたい方、外国人の友達を作りたい方は、そのままClass0に参加できます。
+                        </p>
                         
                         <div class="class0-form">
-                        <h3>Class0 申し込みフォーム</h3>
+                        <h3 data-ja="Class0 申し込みフォーム" data-en="Class0 Application Form">Class0 申し込みフォーム</h3>
                         <form id="class0Form">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label class="form-label required" for="name">名前</label>
-                                    <input type="text" id="name" name="entry.1608711676" class="form-input" placeholder="フルネームを入力してください" required>
+                                    <label class="form-label required" for="name" data-ja="名前" data-en="Name">名前</label>
+                                    <input type="text" id="name" name="entry.1608711676" class="form-input" placeholder="フルネームを入力してください" data-ja-placeholder="フルネームを入力してください" data-en-placeholder="Enter your full name" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label required" for="email">メールアドレス</label>
+                                    <label class="form-label required" for="email" data-ja="メールアドレス" data-en="Email Address">メールアドレス</label>
                                     <input type="email" id="email" name="entry.1371555606" class="form-input" placeholder="example@email.com" required>
                                 </div>
                             </div>
                             
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label class="form-label required" for="birthdate">生年月日</label>
+                                    <label class="form-label required" for="birthdate" data-ja="生年月日" data-en="Date of Birth">生年月日</label>
                                     <input type="date" id="birthdate" name="entry.1834408685" class="form-input" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label required" for="status">ステータス</label>
+                                    <label class="form-label required" for="status" data-ja="ステータス" data-en="Status">ステータス</label>
                                     <select id="status" name="entry.16006456" class="form-select" required>
-                                        <option value="">選択してください</option>
-                                        <option value="高校生以下">高校生以下</option>
-                                        <option value="大学生">大学生</option>
-                                        <option value="学生ではない">学生ではない</option>
+                                        <option value="" data-ja="選択してください" data-en="Please select">選択してください</option>
+                                        <option value="高校生以下" data-ja="高校生以下" data-en="High school or below">高校生以下</option>
+                                        <option value="大学生" data-ja="大学生" data-en="University student">大学生</option>
+                                        <option value="学生ではない" data-ja="学生ではない" data-en="Not a student">学生ではない</option>
                                     </select>
                                 </div>
                             </div>
                             
                             <div class="form-row full-width">
                                 <div class="form-group">
-                                    <label class="form-label" for="language">学習言語</label>
-                                    <input type="text" id="language" name="entry.120573154" class="form-input" placeholder="学習したい言語を入力してください（任意）">
+                                    <label class="form-label" for="language" data-ja="学習言語" data-en="Language to Learn">学習言語</label>
+                                    <input type="text" id="language" name="entry.120573154" class="form-input" placeholder="学習したい言語を入力してください（任意）" data-ja-placeholder="学習したい言語を入力してください（任意）" data-en-placeholder="Enter the language you want to learn (optional)">
                                 </div>
                             </div>
                             
                             <div class="cta-buttons">
                                 <button type="submit" class="cta-button" id="studentButton" style="display: none;" onclick="window.location.href='https://buy.stripe.com/14A7sK31x3abgmhdJj6J20l'">
-                                    <span class="button-text">決済登録へ進む</span>
+                                    <span class="button-text" data-ja="決済登録へ進む" data-en="Proceed to Payment">決済登録へ進む</span>
                                     <span class="button-arrow cta-button-arrow">→</span>
                                 </button>
                                 <button type="submit" class="cta-button" id="nonStudentButton" style="display: none;" onclick="window.location.href='https://buy.stripe.com/14AaEW59F8uv4Dz5cN6J20k'">
-                                    <span class="button-text">決済登録へ進む</span>
+                                    <span class="button-text" data-ja="決済登録へ進む" data-en="Proceed to Payment">決済登録へ進む</span>
                                     <span class="button-arrow cta-button-arrow">→</span>
                                 </button>
                             </div>
@@ -201,6 +219,65 @@
     </div>
 
     <script>
+        // 言語切り替え機能
+        function switchLanguage(lang) {
+            // 言語タブのアクティブ状態を更新
+            document.querySelectorAll('.language-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`[onclick="switchLanguage('${lang}')"]`).classList.add('active');
+            
+            // 全てのdata属性を持つ要素を更新
+            document.querySelectorAll('[data-ja][data-en]').forEach(element => {
+                if (lang === 'ja') {
+                    element.textContent = element.getAttribute('data-ja');
+                } else {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+            
+            // プレースホルダーの更新
+            document.querySelectorAll('[data-ja-placeholder][data-en-placeholder]').forEach(input => {
+                if (lang === 'ja') {
+                    input.placeholder = input.getAttribute('data-ja-placeholder');
+                } else {
+                    input.placeholder = input.getAttribute('data-en-placeholder');
+                }
+            });
+            
+            // セレクトボックスのオプション更新
+            document.querySelectorAll('option[data-ja][data-en]').forEach(option => {
+                if (lang === 'ja') {
+                    option.textContent = option.getAttribute('data-ja');
+                } else {
+                    option.textContent = option.getAttribute('data-en');
+                }
+            });
+            
+            // HTMLコンテンツを含む要素の特別処理
+            document.querySelectorAll('[data-ja][data-en]').forEach(element => {
+                if (element.innerHTML.includes('<strong>') || element.innerHTML.includes('<a ')) {
+                    if (lang === 'ja') {
+                        element.innerHTML = element.getAttribute('data-ja');
+                    } else {
+                        element.innerHTML = element.getAttribute('data-en');
+                    }
+                }
+            });
+            
+            // ページタイトルの更新
+            if (lang === 'ja') {
+                document.title = 'Class0 Members';
+            } else {
+                document.title = 'Class0 Members - JCG';
+            }
+        }
+        
+        // ページ読み込み時に日本語をデフォルトに設定
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLanguage('ja');
+        });
+        
         // フォームの必須項目チェック
         function checkRequiredFields() {
             const name = document.getElementById('name').value.trim();

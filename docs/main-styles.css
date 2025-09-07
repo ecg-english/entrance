@@ -1346,10 +1346,19 @@ body::before {
     margin-bottom: 30px;
     text-align: center;
 }
+
+/* Class0ページ用の言語切り替えスタイル */
+.class0-container .language-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
 .class0-container {
     width: 100%;
     max-width: 1000px;
     animation: fadeInScale 1s ease-out;
+    position: relative;
 }
 
 .class0-signboard {
