@@ -32,15 +32,15 @@
                     <h2 id="scheduleTitle">活動スケジュール</h2>
                     <div class="schedule-grid">
                         <div class="schedule-item">
-                            <div class="schedule-day">月・水・金</div>
+                            <div class="schedule-day" id="englishScheduleDay">月・水・金</div>
                             <div class="schedule-content" id="englishSchedule">英語交流</div>
                         </div>
                         <div class="schedule-item">
-                            <div class="schedule-day">土</div>
+                            <div class="schedule-day" id="japaneseScheduleDay">土</div>
                             <div class="schedule-content" id="japaneseSchedule">日本語交流</div>
                         </div>
                         <div class="schedule-item">
-                            <div class="schedule-day">日</div>
+                            <div class="schedule-day" id="cultureScheduleDay">日</div>
                             <div class="schedule-content" id="cultureSchedule">文化交流イベント</div>
                         </div>
                     </div>
@@ -52,22 +52,29 @@
                         <div class="step-item">
                             <div class="step-number">1</div>
                             <div class="step-content">
-                                <h3 id="step1Title">アカウント作成</h3>
-                                <p id="step1Description">「アカウントをお持ちでない方はこちら」をタップしてアカウントを作成する</p>
+                                <h3 id="step1Title">日付選択</h3>
+                                <p id="step1Description">下記のカレンダーから体験参加できる日を一つだけ選択して「予約する」ボタンをタップ。</p>
                             </div>
                         </div>
                         <div class="step-item">
                             <div class="step-number">2</div>
                             <div class="step-content">
-                                <h3 id="step2Title">予約</h3>
-                                <p id="step2Description">参加希望日をカレンダーから選択</p>
+                                <h3 id="step2Title">アカウント作成</h3>
+                                <p id="step2Description">「アカウントをお持ちでない方はこちら」をタップしてアカウントを作成する</p>
                             </div>
                         </div>
                         <div class="step-item">
                             <div class="step-number">3</div>
                             <div class="step-content">
-                                <h3 id="step3Title">予約完了メール</h3>
-                                <p id="step3Description">予約が完了するとecg_english@nauticalmile.jpからメールが来る</p>
+                                <h3 id="step3Title">予約</h3>
+                                <p id="step3Description">参加希望日をカレンダーから選択</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3 id="step4Title">予約完了メール</h3>
+                                <p id="step4Description">予約が完了するとecg_english@nauticalmile.jpからメールが来る</p>
                             </div>
                         </div>
                     </div>
@@ -117,16 +124,21 @@
                 pageTitle: 'Offline Activities',
                 offlineDescription: '神戸三宮でのオフライン活動で、リアルな言語交流を体験してください。<br><br>月・水・金は英語、土は日本語、日曜日は文化交流イベントを開催しています。<br>メンバー限定イベントも多数開催しているので、まずはビジターとして体験してみてください。',
                 scheduleTitle: '活動スケジュール',
+                englishScheduleDay: '月・水・金',
+                japaneseScheduleDay: '土',
+                cultureScheduleDay: '日',
                 englishSchedule: '英語交流',
                 japaneseSchedule: '日本語交流',
                 cultureSchedule: '文化交流イベント',
                 stepsTitle: '参加手順',
-                step1Title: 'アカウント作成',
-                step1Description: '「アカウントをお持ちでない方はこちら」をタップしてアカウントを作成する',
-                step2Title: '予約',
-                step2Description: '参加希望日をカレンダーから選択',
-                step3Title: '予約完了メール',
-                step3Description: '予約が完了するとecg_english@nauticalmile.jpからメールが来る',
+                step1Title: '日付選択',
+                step1Description: '下記のカレンダーから体験参加できる日を一つだけ選択して「予約する」ボタンをタップ。',
+                step2Title: 'アカウント作成',
+                step2Description: '「アカウントをお持ちでない方はこちら」をタップしてアカウントを作成する',
+                step3Title: '予約',
+                step3Description: '参加希望日をカレンダーから選択',
+                step4Title: '予約完了メール',
+                step4Description: '予約が完了するとecg_english@nauticalmile.jpからメールが来る',
                 reservationTitle: '体験予約',
                 reservationDescription: '参加希望の日を選択してください（月・水・金・土・日）',
                 selectedDateTitle: '選択された日',
@@ -143,16 +155,21 @@
                 pageTitle: 'Offline Activities',
                 offlineDescription: 'Experience real language exchange through offline activities in Kobe Sannomiya.<br><br>We host English sessions on Mon/Wed/Fri, Japanese sessions on Sat, and cultural exchange events on Sundays.<br>We also hold many member-only events, so please try as a visitor first.',
                 scheduleTitle: 'Activity Schedule',
+                englishScheduleDay: 'Mon・Wed・Fri',
+                japaneseScheduleDay: 'Sat',
+                cultureScheduleDay: 'Sun',
                 englishSchedule: 'English Exchange',
                 japaneseSchedule: 'Japanese Exchange',
                 cultureSchedule: 'Cultural Exchange Events',
                 stepsTitle: 'How to Participate',
-                step1Title: 'Create Account',
-                step1Description: 'Click "Don\'t have an account? Click here" to create an account',
-                step2Title: 'Make Reservation',
-                step2Description: 'Select your preferred date from the calendar',
-                step3Title: 'Confirmation Email',
-                step3Description: 'You will receive a confirmation email from ecg_english@nauticalmile.jp',
+                step1Title: 'Select Date',
+                step1Description: 'Select one available date from the calendar below and tap the "Make Reservation" button.',
+                step2Title: 'Create Account',
+                step2Description: 'Click "Don\'t have an account? Click here" to create an account',
+                step3Title: 'Make Reservation',
+                step3Description: 'Select your preferred date from the calendar',
+                step4Title: 'Confirmation Email',
+                step4Description: 'You will receive a confirmation email from ecg_english@nauticalmile.jp',
                 reservationTitle: 'Experience Reservation',
                 reservationDescription: 'Please select your preferred date (Mon, Wed, Fri, Sat, Sun)',
                 selectedDateTitle: 'Selected Date',
@@ -196,6 +213,8 @@
             document.getElementById('step2Description').textContent = langData.step2Description;
             document.getElementById('step3Title').textContent = langData.step3Title;
             document.getElementById('step3Description').textContent = langData.step3Description;
+            document.getElementById('step4Title').textContent = langData.step4Title;
+            document.getElementById('step4Description').textContent = langData.step4Description;
             document.getElementById('reservationTitle').textContent = langData.reservationTitle;
             document.getElementById('reservationDescription').textContent = langData.reservationDescription;
             document.getElementById('selectedDateTitle').textContent = langData.selectedDateTitle;

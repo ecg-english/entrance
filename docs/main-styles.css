@@ -1621,6 +1621,8 @@ body::before {
     grid-template-columns: repeat(7, 1fr);
     gap: 8px;
     margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .calendar-weekday {
@@ -1629,6 +1631,8 @@ body::before {
     font-weight: 600;
     color: #4a90e2;
     font-size: 0.9rem;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .calendar-day {
@@ -1754,6 +1758,15 @@ body::before {
         padding: 20px;
     }
     
+    .calendar-grid {
+        gap: 4px;
+    }
+    
+    .calendar-weekday {
+        padding: 8px 4px;
+        font-size: 0.8rem;
+    }
+    
     .calendar-day {
         font-size: 0.8rem;
         padding: 8px;
@@ -1772,6 +1785,15 @@ body::before {
     
     .calendar-section {
         padding: 15px;
+    }
+    
+    .calendar-grid {
+        gap: 2px;
+    }
+    
+    .calendar-weekday {
+        padding: 6px 2px;
+        font-size: 0.7rem;
     }
     
     .calendar-day {
