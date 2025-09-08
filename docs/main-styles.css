@@ -1807,6 +1807,227 @@ body::before {
     position: relative;
 }
 
+/* Privacy & Law Pages Styles */
+.privacy-container, .law-container {
+    width: 100%;
+    max-width: 1000px;
+    animation: fadeInScale 1s ease-out;
+    position: relative;
+}
+
+.privacy-signboard, .law-signboard {
+    background: linear-gradient(135deg, #1e293b 0%, #0d2c5d 100%);
+    padding: 48px 40px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.privacy-signboard::before, .law-signboard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+    pointer-events: none;
+}
+
+.privacy-header, .law-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.privacy-header h1, .law-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.privacy-neon-line, .law-neon-line {
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, #4a90e2, #7b68ee, #4a90e2);
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+    animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+.privacy-content, .law-content {
+    position: relative;
+    z-index: 2;
+}
+
+.privacy-description, .law-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #e5e5e5;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.privacy-section, .law-section {
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+}
+
+.privacy-section h2, .law-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.privacy-section p, .law-section p {
+    color: #e5e5e5;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.privacy-section ul, .law-section ul {
+    color: #e5e5e5;
+    line-height: 1.7;
+    margin-left: 20px;
+}
+
+.privacy-section li, .law-section li {
+    margin-bottom: 8px;
+}
+
+.law-table {
+    margin: 30px 0;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    overflow-x: auto;
+}
+
+.law-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.law-table th {
+    background: rgba(74, 144, 226, 0.2);
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+    min-width: 200px;
+}
+
+.law-table td {
+    color: #e5e5e5;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    line-height: 1.6;
+}
+
+.contact-info {
+    background: rgba(74, 144, 226, 0.1);
+    border: 1px solid rgba(74, 144, 226, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+}
+
+.contact-info a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.privacy-footer, .law-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .privacy-signboard, .law-signboard {
+        padding: 30px 20px;
+    }
+    
+    .privacy-header h1, .law-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .privacy-section, .law-section {
+        padding: 20px;
+    }
+    
+    .law-table {
+        padding: 15px;
+    }
+    
+    .law-table th, .law-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .privacy-header h1, .law-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .privacy-description, .law-description {
+        font-size: 1rem;
+        padding: 20px;
+    }
+    
+    .privacy-section, .law-section {
+        padding: 15px;
+    }
+    
+    .law-table th, .law-table td {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}
+
 .class0-signboard {
     background: linear-gradient(135deg, #1e293b 0%, #0d2c5d 100%);
     padding: 48px 40px;
