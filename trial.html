@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trial Lesson</title>
+    <link rel="stylesheet" href="main-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container trial-container">
+        <div class="signboard trial-signboard">
+            <!-- 言語切り替えタブ -->
+            <div class="language-switcher">
+                <button class="language-tab active" data-lang="ja">日本語</button>
+                <button class="language-tab" data-lang="en">English</button>
+            </div>
+            
+            <div class="sign-header trial-header">
+                <h1 id="pageTitle">Trial Lesson</h1>
+                <div class="neon-line trial-neon-line"></div>
+            </div>
+            
+            <div class="sign-content trial-content">
+                <div class="trial-description" id="trialDescription">
+                    初回限定3,000円/回の単発お試しレッスンで、自分に本当にあっているのかを一度体験してみてください。<br><br>
+                    言語学習のお悩み相談として活用いただいても構いません。お気軽にお申し込みください。<br>
+                </div>
+                <hr>
+                <br><br>
+                <form class="trial-form" id="trialForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name" id="nameLabel">お名前</label>
+                        <input type="text" id="name" name="entry.1184767875" class="form-input" placeholder="フルネームを入力してください" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email" id="emailLabel">メールアドレス</label>
+                        <input type="email" id="email" name="entry.1138256236" class="form-input" placeholder="example@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="learningLanguage" id="learningLanguageLabel">学習予定の言語（英語・日本語以外も検討可）</label>
+                        <input type="text" id="learningLanguage" name="entry.532950258" class="form-input" placeholder="例：英語、日本語、中国語など" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" id="dateTimeLabel">希望日時（3つ選択してください）</label>
+                        
+                        <div class="calendar-section">
+                            <div class="calendar-header">
+                                <button type="button" class="calendar-nav" id="prevMonth">←</button>
+                                <div class="calendar-title" id="calendarTitle">2025.9</div>
+                                <button type="button" class="calendar-nav" id="nextMonth">→</button>
+                            </div>
+                            
+                            <div class="calendar-grid">
+                                <div class="calendar-weekday" id="sun">Sun</div>
+                                <div class="calendar-weekday" id="mon">Mon</div>
+                                <div class="calendar-weekday" id="tue">Tue</div>
+                                <div class="calendar-weekday" id="wed">Wed</div>
+                                <div class="calendar-weekday" id="thu">Thu</div>
+                                <div class="calendar-weekday" id="fri">Fri</div>
+                                <div class="calendar-weekday" id="sat">Sat</div>
+                            </div>
+                            
+                            <div id="calendarDays" class="calendar-grid"></div>
+                        </div>
+                        
+                        <div class="time-selection" id="timeSelection" style="display: none;">
+                            <h3 id="timeSelectionTitle">時間を選択してください</h3>
+                            <div class="time-grid">
+                                <div class="time-slot" data-time="09:00">09:00</div>
+                                <div class="time-slot" data-time="10:00">10:00</div>
+                                <div class="time-slot" data-time="11:00">11:00</div>
+                                <div class="time-slot" data-time="13:00">13:00</div>
+                                <div class="time-slot" data-time="14:00">14:00</div>
+                                <div class="time-slot" data-time="15:00">15:00</div>
+                                <div class="time-slot" data-time="16:00">16:00</div>
+                                <div class="time-slot" data-time="17:00">17:00</div>
+                                <div class="time-slot" data-time="18:00">18:00</div>
+                                <div class="time-slot" data-time="19:00">19:00</div>
+                                <div class="time-slot" data-time="20:00">20:00</div>
+                                <div class="time-slot" data-time="21:00">21:00</div>
+                            </div>
+                        </div>
+                        
+                        <div class="selected-slots" id="selectedSlots" style="display: none;">
+                            <h3 id="selectedSlotsTitle">選択された候補日時</h3>
+                            <div id="selectedSlotsList"></div>
+                        </div>
+                        
+                        <input type="hidden" name="entry.930648395" id="reserveDay" value="">
+                    </div>
+                    
+                    <div class="trial-footer">
+                        <button type="submit" class="trial-button" id="submitButton" disabled>
+                            <span class="button-text" id="submitButtonText">申し込み候補日を送信</span>
+                            <span class="button-arrow trial-button-arrow">→</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 言語データ
+        const languages = {
+            ja: {
+                pageTitle: 'Trial Lesson',
+                trialDescription: '初回限定3,000円/回の単発お試しレッスンで、自分に本当にあっているのかを一度体験してみてください。<br><br>言語学習のお悩み相談として活用いただいても構いません。お気軽にお申し込みください。<br>',
+                nameLabel: 'お名前',
+                emailLabel: 'メールアドレス',
+                learningLanguageLabel: '学習予定の言語（英語・日本語以外も検討可）',
+                dateTimeLabel: '希望日時（3つ選択してください）',
+                timeSelectionTitle: '時間を選択してください',
+                selectedSlotsTitle: '選択された候補日時',
+                submitButtonText: '申し込み候補日を送信',
+                sun: 'Sun',
+                mon: 'Mon',
+                tue: 'Tue',
+                wed: 'Wed',
+                thu: 'Thu',
+                fri: 'Fri',
+                sat: 'Sat',
+                namePlaceholder: 'フルネームを入力してください',
+                emailPlaceholder: 'example@email.com',
+                learningLanguagePlaceholder: '例：英語、日本語、中国語など',
+                maxSlotsMessage: '最大3つまで選択できます。',
+                duplicateSlotMessage: '既に選択されている時間です。',
+                selectDateTimeMessage: '日時を選択してください。'
+            },
+            en: {
+                pageTitle: 'Trial Lesson',
+                trialDescription: 'Experience our trial lesson for just ¥3,000 for first-time users to see if our service is right for you.<br><br>You can also use this as a consultation for language learning concerns. Please feel free to apply.<br>',
+                nameLabel: 'Full Name',
+                emailLabel: 'Email Address',
+                learningLanguageLabel: 'Language to Learn (English, Japanese, and other languages considered)',
+                dateTimeLabel: 'Preferred Date & Time (Please select 3 options)',
+                timeSelectionTitle: 'Please select a time',
+                selectedSlotsTitle: 'Selected Date & Time Options',
+                submitButtonText: 'Submit Application',
+                sun: 'Sun',
+                mon: 'Mon',
+                tue: 'Tue',
+                wed: 'Wed',
+                thu: 'Thu',
+                fri: 'Fri',
+                sat: 'Sat',
+                namePlaceholder: 'Please enter your full name',
+                emailPlaceholder: 'example@email.com',
+                learningLanguagePlaceholder: 'e.g., English, Japanese, Chinese, etc.',
+                maxSlotsMessage: 'You can select up to 3 options.',
+                duplicateSlotMessage: 'This time slot is already selected.',
+                selectDateTimeMessage: 'Please select date and time.'
+            }
+        };
+
+        // 言語切り替え機能
+        function switchLanguage(lang) {
+            // アクティブタブの更新
+            document.querySelectorAll('.language-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+            
+            // HTMLのlang属性を更新
+            document.documentElement.lang = lang;
+            
+            // コンテンツの更新
+            const content = languages[lang];
+            document.getElementById('pageTitle').textContent = content.pageTitle;
+            document.getElementById('trialDescription').innerHTML = content.trialDescription;
+            document.getElementById('nameLabel').textContent = content.nameLabel;
+            document.getElementById('emailLabel').textContent = content.emailLabel;
+            document.getElementById('learningLanguageLabel').textContent = content.learningLanguageLabel;
+            document.getElementById('dateTimeLabel').textContent = content.dateTimeLabel;
+            document.getElementById('timeSelectionTitle').textContent = content.timeSelectionTitle;
+            document.getElementById('selectedSlotsTitle').textContent = content.selectedSlotsTitle;
+            document.getElementById('submitButtonText').textContent = content.submitButtonText;
+            
+            // 曜日の更新
+            document.getElementById('sun').textContent = content.sun;
+            document.getElementById('mon').textContent = content.mon;
+            document.getElementById('tue').textContent = content.tue;
+            document.getElementById('wed').textContent = content.wed;
+            document.getElementById('thu').textContent = content.thu;
+            document.getElementById('fri').textContent = content.fri;
+            document.getElementById('sat').textContent = content.sat;
+            
+            // プレースホルダーの更新
+            document.getElementById('name').placeholder = content.namePlaceholder;
+            document.getElementById('email').placeholder = content.emailPlaceholder;
+            document.getElementById('learningLanguage').placeholder = content.learningLanguagePlaceholder;
+        }
+
+        // 言語切り替えタブのイベントリスナー
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.language-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                });
+            });
+        });
+
+        class TrialCalendar {
+            constructor() {
+                this.currentDate = new Date();
+                this.selectedDate = null;
+                this.selectedSlots = [];
+                this.maxSlots = 3;
+                this.currentLang = 'ja';
+                
+                this.init();
+            }
+            
+            init() {
+                this.renderCalendar();
+                this.bindEvents();
+            }
+            
+            renderCalendar() {
+                const year = this.currentDate.getFullYear();
+                const month = this.currentDate.getMonth();
+                
+                document.getElementById('calendarTitle').textContent = `${year}. ${month + 1}`;
+                
+                const firstDay = new Date(year, month, 1);
+                const lastDay = new Date(year, month + 1, 0);
+                const startDate = new Date(firstDay);
+                startDate.setDate(startDate.getDate() - firstDay.getDay());
+                
+                const calendarDays = document.getElementById('calendarDays');
+                calendarDays.innerHTML = '';
+                
+                for (let i = 0; i < 42; i++) {
+                    const date = new Date(startDate);
+                    date.setDate(startDate.getDate() + i);
+                    
+                    const dayElement = document.createElement('div');
+                    dayElement.className = 'calendar-day';
+                    dayElement.textContent = date.getDate();
+                    
+                    if (date.getMonth() !== month) {
+                        dayElement.classList.add('disabled');
+                    } else if (date < new Date()) {
+                        dayElement.classList.add('disabled');
+                    } else {
+                        dayElement.addEventListener('click', () => this.selectDate(date));
+                    }
+                    
+                    calendarDays.appendChild(dayElement);
+                }
+            }
+            
+            selectDate(date) {
+                this.selectedDate = date;
+                
+                // カレンダーの選択状態を更新
+                document.querySelectorAll('.calendar-day').forEach(day => {
+                    day.classList.remove('selected');
+                });
+                
+                event.target.classList.add('selected');
+                
+                // 時間選択を表示
+                document.getElementById('timeSelection').style.display = 'block';
+                
+                // 既に選択された時間を無効化
+                this.updateTimeSlots();
+            }
+            
+            updateTimeSlots() {
+                const timeSlots = document.querySelectorAll('.time-slot');
+                timeSlots.forEach(slot => {
+                    const time = slot.dataset.time;
+                    const dateStr = this.formatDate(this.selectedDate);
+                    
+                    // 既に選択されている時間は無効化
+                    const isSelected = this.selectedSlots.some(slot => 
+                        slot.date === dateStr && slot.time === time
+                    );
+                    
+                    if (isSelected) {
+                        slot.classList.add('disabled');
+                        slot.classList.remove('selected');
+                    } else {
+                        slot.classList.remove('disabled');
+                        slot.classList.remove('selected');
+                    }
+                });
+            }
+            
+            selectTimeSlot(time) {
+                if (this.selectedSlots.length >= this.maxSlots) {
+                    const message = this.currentLang === 'ja' ? '最大3つまで選択できます。' : 'You can select up to 3 options.';
+                    alert(message);
+                    return;
+                }
+                
+                const dateStr = this.formatDate(this.selectedDate);
+                const newSlot = { date: dateStr, time: time };
+                
+                // 重複チェック
+                const isDuplicate = this.selectedSlots.some(slot => 
+                    slot.date === dateStr && slot.time === time
+                );
+                
+                if (isDuplicate) {
+                    const message = this.currentLang === 'ja' ? '既に選択されている時間です。' : 'This time slot is already selected.';
+                    alert(message);
+                    return;
+                }
+                
+                this.selectedSlots.push(newSlot);
+                this.updateSelectedSlots();
+                this.updateTimeSlots();
+                this.updateSubmitButton();
+            }
+            
+            removeSlot(index) {
+                this.selectedSlots.splice(index, 1);
+                this.updateSelectedSlots();
+                this.updateTimeSlots();
+                this.updateSubmitButton();
+            }
+            
+            updateSelectedSlots() {
+                const container = document.getElementById('selectedSlotsList');
+                container.innerHTML = '';
+                
+                if (this.selectedSlots.length === 0) {
+                    document.getElementById('selectedSlots').style.display = 'none';
+                    return;
+                }
+                
+                document.getElementById('selectedSlots').style.display = 'block';
+                
+                this.selectedSlots.forEach((slot, index) => {
+                    const slotElement = document.createElement('div');
+                    slotElement.className = 'slot-item';
+                    const removeText = this.currentLang === 'ja' ? '削除' : 'Remove';
+                    slotElement.innerHTML = `
+                        <span>${slot.date} ${slot.time}</span>
+                        <button type="button" class="remove-slot" onclick="calendar.removeSlot(${index})">${removeText}</button>
+                    `;
+                    container.appendChild(slotElement);
+                });
+            }
+            
+            updateSubmitButton() {
+                const submitButton = document.getElementById('submitButton');
+                submitButton.disabled = this.selectedSlots.length === 0;
+            }
+            
+            formatDate(date) {
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                return `${year}-${month}-${day}`;
+            }
+            
+            getFormattedSlots() {
+                return this.selectedSlots.map(slot => `${slot.date} ${slot.time}`).join(', ');
+            }
+            
+            bindEvents() {
+                document.getElementById('prevMonth').addEventListener('click', () => {
+                    this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+                    this.renderCalendar();
+                });
+                
+                document.getElementById('nextMonth').addEventListener('click', () => {
+                    this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+                    this.renderCalendar();
+                });
+                
+                // 時間選択のイベント
+                document.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('time-slot') && !e.target.classList.contains('disabled')) {
+                        e.target.classList.add('selected');
+                        this.selectTimeSlot(e.target.dataset.time);
+                    }
+                });
+            }
+        }
+        
+        // カレンダーの初期化
+        const calendar = new TrialCalendar();
+        
+        // 言語切り替え時にカレンダーの言語も更新
+        function updateCalendarLanguage(lang) {
+            calendar.currentLang = lang;
+            calendar.updateSelectedSlots();
+        }
+        
+        // 言語切り替えタブのイベントリスナーを更新
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.language-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                    updateCalendarLanguage(lang);
+                });
+            });
+        });
+        
+        // フォーム送信処理
+        document.getElementById('trialForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const learningLanguage = document.getElementById('learningLanguage').value;
+            const slots = calendar.getFormattedSlots();
+            
+            if (!name || !email || !learningLanguage) {
+                const message = document.documentElement.lang === 'ja' ? 'すべての必須項目を入力してください。' : 'Please fill in all required fields.';
+                alert(message);
+                return;
+            }
+            
+            if (slots === '') {
+                const message = document.documentElement.lang === 'ja' ? '日時を選択してください。' : 'Please select date and time.';
+                alert(message);
+                return;
+            }
+            
+            // 隠しフィールドに値を設定
+            document.getElementById('reserveDay').value = slots;
+            
+            // Googleフォームに送信
+            const formData = new FormData(this);
+            const url = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdDAO73f2qOEWKwOVPhwx5MAAQSRUpCkB_jxe2JLGr50p4C_A/formResponse';
+            
+            // フォームデータをURLパラメータとして送信
+            const params = new URLSearchParams();
+            for (let [key, value] of formData.entries()) {
+                params.append(key, value);
+            }
+            
+            // 送信処理（実際の送信はGoogleフォームが行う）
+            fetch(url, {
+                method: 'POST',
+                body: params,
+                mode: 'no-cors'
+            }).then(() => {
+                // 送信完了後、Stripe決済ページに遷移
+                window.location.href = 'https://buy.stripe.com/6oUbJ09pV4ef4DzcFf6J20m';
+            }).catch(() => {
+                const message = document.documentElement.lang === 'ja' ? '送信に失敗しました。もう一度お試しください。' : 'Submission failed. Please try again.';
+                alert(message);
+            });
+        });
+    </script>
+</body>
+</html> 

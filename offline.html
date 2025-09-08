@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Activities</title>
+    <link rel="stylesheet" href="main-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container offline-container">
+        <div class="signboard offline-signboard">
+            <!-- 言語切り替えタブ -->
+            <div class="language-switcher">
+                <button class="language-tab active" data-lang="ja">日本語</button>
+                <button class="language-tab" data-lang="en">English</button>
+            </div>
+            
+            <div class="sign-header offline-header">
+                <h1 id="pageTitle">Offline Activities</h1>
+                <div class="neon-line offline-neon-line"></div>
+            </div>
+            
+            <div class="sign-content offline-content">
+                <div class="offline-description" id="offlineDescription">
+                    神戸三宮でのオフライン活動で、リアルな言語交流を体験してください。<br><br>
+                    月・水・金は英語、土は日本語、日曜日は文化交流イベントを開催しています。<br>
+                    メンバー限定イベントも多数開催しているので、まずはビジターとして体験してみてください。
+                </div>
+                
+                <div class="offline-schedule">
+                    <h2 id="scheduleTitle">活動スケジュール</h2>
+                    <div class="schedule-grid">
+                        <div class="schedule-item">
+                            <div class="schedule-day" id="englishScheduleDay">月・水・金</div>
+                            <div class="schedule-content" id="englishSchedule">英語交流</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-day" id="japaneseScheduleDay">土</div>
+                            <div class="schedule-content" id="japaneseSchedule">日本語交流</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-day" id="cultureScheduleDay">日</div>
+                            <div class="schedule-content" id="cultureSchedule">文化交流イベント</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="account-creation-steps">
+                    <h2 id="stepsTitle">参加手順</h2>
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3 id="step1Title">日付選択</h3>
+                                <p id="step1Description">下記のカレンダーから体験参加できる日を一つだけ選択して「予約する」ボタンをタップ。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3 id="step2Title">アカウント作成</h3>
+                                <p id="step2Description">「アカウントをお持ちでない方はこちら」をタップしてアカウントを作成する</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3 id="step3Title">予約</h3>
+                                <p id="step3Description">参加希望日をカレンダーから選択</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3 id="step4Title">予約完了メール</h3>
+                                <p id="step4Description">予約が完了するとecg_english@nauticalmile.jpからメールが来る</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reservation-section">
+                    <h2 id="reservationTitle">体験予約</h2>
+                    <p id="reservationDescription">参加希望の日を選択してください（月・水・金・土・日）</p>
+                    
+                    <div class="calendar-section">
+                        <div class="calendar-header">
+                            <button type="button" class="calendar-nav" id="prevMonth">←</button>
+                            <div class="calendar-title" id="calendarTitle">2025.1</div>
+                            <button type="button" class="calendar-nav" id="nextMonth">→</button>
+                        </div>
+                        
+                        <div class="calendar-grid">
+                            <div class="calendar-weekday" id="sun">Sun</div>
+                            <div class="calendar-weekday" id="mon">Mon</div>
+                            <div class="calendar-weekday" id="tue">Tue</div>
+                            <div class="calendar-weekday" id="wed">Wed</div>
+                            <div class="calendar-weekday" id="thu">Thu</div>
+                            <div class="calendar-weekday" id="fri">Fri</div>
+                            <div class="calendar-weekday" id="sat">Sat</div>
+                        </div>
+                        
+                        <div id="calendarDays" class="calendar-grid"></div>
+                    </div>
+                    
+                    <div class="selected-date" id="selectedDate" style="display: none;">
+                        <h3 id="selectedDateTitle">選択された日</h3>
+                        <div id="selectedDateDisplay"></div>
+                        <button type="button" class="reservation-button" id="reservationButton">
+                            <span class="button-text" id="reservationButtonText">予約する</span>
+                            <span class="button-arrow reservation-button-arrow">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 言語データ
+        const languages = {
+            ja: {
+                pageTitle: 'Offline Activities',
+                offlineDescription: '神戸三宮でのオフライン活動で、リアルな言語交流を体験してください。<br><br>月・水・金は英語、土は日本語、日曜日は文化交流イベントを開催しています。<br>メンバー限定イベントも多数開催しているので、まずはビジターとして体験してみてください。',
+                scheduleTitle: '活動スケジュール',
+                englishScheduleDay: '月・水・金',
+                japaneseScheduleDay: '土',
+                cultureScheduleDay: '日',
+                englishSchedule: '英語交流',
+                japaneseSchedule: '日本語交流',
+                cultureSchedule: '文化交流イベント',
+                stepsTitle: '参加手順',
+                step1Title: '日付選択',
+                step1Description: '下記のカレンダーから体験参加できる日を一つだけ選択して「予約する」ボタンをタップ。',
+                step2Title: 'アカウント作成',
+                step2Description: '「アカウントをお持ちでない方はこちら」をタップしてアカウントを作成する',
+                step3Title: '予約',
+                step3Description: '参加希望日をカレンダーから選択',
+                step4Title: '予約完了メール',
+                step4Description: '予約が完了するとecg_english@nauticalmile.jpからメールが来る',
+                reservationTitle: '体験予約',
+                reservationDescription: '参加希望の日を選択してください（月・水・金・土・日）',
+                selectedDateTitle: '選択された日',
+                reservationButtonText: '予約する',
+                sun: 'Sun',
+                mon: 'Mon',
+                tue: 'Tue',
+                wed: 'Wed',
+                thu: 'Thu',
+                fri: 'Fri',
+                sat: 'Sat'
+            },
+            en: {
+                pageTitle: 'Offline Activities',
+                offlineDescription: 'Experience real language exchange through offline activities in Kobe Sannomiya.<br><br>We host English sessions on Mon/Wed/Fri, Japanese sessions on Sat, and cultural exchange events on Sundays.<br>We also hold many member-only events, so please try as a visitor first.',
+                scheduleTitle: 'Activity Schedule',
+                englishScheduleDay: 'Mon・Wed・Fri',
+                japaneseScheduleDay: 'Sat',
+                cultureScheduleDay: 'Sun',
+                englishSchedule: 'English Exchange',
+                japaneseSchedule: 'Japanese Exchange',
+                cultureSchedule: 'Cultural Exchange Events',
+                stepsTitle: 'How to Participate',
+                step1Title: 'Select Date',
+                step1Description: 'Select one available date from the calendar below and tap the "Make Reservation" button.',
+                step2Title: 'Create Account',
+                step2Description: 'Click "Don\'t have an account? Click here" to create an account',
+                step3Title: 'Make Reservation',
+                step3Description: 'Select your preferred date from the calendar',
+                step4Title: 'Confirmation Email',
+                step4Description: 'You will receive a confirmation email from ecg_english@nauticalmile.jp',
+                reservationTitle: 'Experience Reservation',
+                reservationDescription: 'Please select your preferred date (Mon, Wed, Fri, Sat, Sun)',
+                selectedDateTitle: 'Selected Date',
+                reservationButtonText: 'Make Reservation',
+                sun: 'Sun',
+                mon: 'Mon',
+                tue: 'Tue',
+                wed: 'Wed',
+                thu: 'Thu',
+                fri: 'Fri',
+                sat: 'Sat'
+            }
+        };
+
+        let currentLanguage = 'ja';
+        let currentDate = new Date();
+        let selectedDate = null;
+
+        // 言語切り替え機能
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // タブのアクティブ状態を更新
+            document.querySelectorAll('.language-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+            
+            // コンテンツを更新
+            const langData = languages[lang];
+            document.getElementById('pageTitle').textContent = langData.pageTitle;
+            document.getElementById('offlineDescription').innerHTML = langData.offlineDescription;
+            document.getElementById('scheduleTitle').textContent = langData.scheduleTitle;
+            document.getElementById('englishScheduleDay').textContent = langData.englishScheduleDay;
+            document.getElementById('japaneseScheduleDay').textContent = langData.japaneseScheduleDay;
+            document.getElementById('cultureScheduleDay').textContent = langData.cultureScheduleDay;
+            document.getElementById('cultureSchedule').textContent = langData.cultureSchedule;
+            document.getElementById('englishSchedule').textContent = langData.englishSchedule;
+            document.getElementById('japaneseSchedule').textContent = langData.japaneseSchedule;
+            document.getElementById('cultureSchedule').textContent = langData.cultureSchedule;
+            document.getElementById('stepsTitle').textContent = langData.stepsTitle;
+            document.getElementById('step1Title').textContent = langData.step1Title;
+            document.getElementById('step1Description').textContent = langData.step1Description;
+            document.getElementById('step2Title').textContent = langData.step2Title;
+            document.getElementById('step2Description').textContent = langData.step2Description;
+            document.getElementById('step3Title').textContent = langData.step3Title;
+            document.getElementById('step3Description').textContent = langData.step3Description;
+            document.getElementById('step4Title').textContent = langData.step4Title;
+            document.getElementById('step4Description').textContent = langData.step4Description;
+            document.getElementById('reservationTitle').textContent = langData.reservationTitle;
+            document.getElementById('reservationDescription').textContent = langData.reservationDescription;
+            document.getElementById('selectedDateTitle').textContent = langData.selectedDateTitle;
+            document.getElementById('reservationButtonText').textContent = langData.reservationButtonText;
+            
+            // 曜日ラベルを更新
+            document.getElementById('sun').textContent = langData.sun;
+            document.getElementById('mon').textContent = langData.mon;
+            document.getElementById('tue').textContent = langData.tue;
+            document.getElementById('wed').textContent = langData.wed;
+            document.getElementById('thu').textContent = langData.thu;
+            document.getElementById('fri').textContent = langData.fri;
+            document.getElementById('sat').textContent = langData.sat;
+            
+            // カレンダーを再描画
+            renderCalendar();
+        }
+
+        // カレンダー描画
+        function renderCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const startDate = new Date(firstDay);
+            startDate.setDate(startDate.getDate() - firstDay.getDay());
+            
+            document.getElementById('calendarTitle').textContent = `${year}.${month + 1}`;
+            
+            const calendarDays = document.getElementById('calendarDays');
+            calendarDays.innerHTML = '';
+            
+            const today = new Date();
+            const currentMonth = today.getMonth();
+            const currentYear = today.getFullYear();
+            
+            for (let i = 0; i < 42; i++) {
+                const date = new Date(startDate);
+                date.setDate(startDate.getDate() + i);
+                
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                dayElement.textContent = date.getDate();
+                
+                const dayOfWeek = date.getDay();
+                const isCurrentMonth = date.getMonth() === month;
+                const isPast = date < today && !(date.getDate() === today.getDate() && date.getMonth() === today.getMonth() && date.getFullYear() === today.getFullYear());
+                const isAvailable = (dayOfWeek === 1 || dayOfWeek === 3 || dayOfWeek === 5 || dayOfWeek === 6 || dayOfWeek === 0) && isCurrentMonth && !isPast;
+                
+                if (!isCurrentMonth) {
+                    dayElement.classList.add('other-month');
+                } else if (isPast) {
+                    dayElement.classList.add('past-day');
+                } else if (isAvailable) {
+                    dayElement.classList.add('available-day');
+                    dayElement.addEventListener('click', () => selectDate(date));
+                } else {
+                    dayElement.classList.add('unavailable-day');
+                }
+                
+                if (selectedDate && date.getTime() === selectedDate.getTime()) {
+                    dayElement.classList.add('selected');
+                }
+                
+                calendarDays.appendChild(dayElement);
+            }
+        }
+
+        // 日付選択
+        function selectDate(date) {
+            selectedDate = date;
+            renderCalendar();
+            
+            const selectedDateDisplay = document.getElementById('selectedDateDisplay');
+            const selectedDateSection = document.getElementById('selectedDate');
+            
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            const dayOfWeek = ['日', '月', '火', '水', '木', '金', '土'][date.getDay()];
+            
+            selectedDateDisplay.textContent = `${year}年${month}月${day}日（${dayOfWeek}）`;
+            selectedDateSection.style.display = 'block';
+        }
+
+        // 予約ボタンクリック
+        document.getElementById('reservationButton').addEventListener('click', () => {
+            if (selectedDate) {
+                window.location.href = 'https://ecg-english.github.io/language-community/#/login?redirect=%2Fevents%3Fredirect%3D%252Fchannel%252F12';
+            }
+        });
+
+        // カレンダーナビゲーション
+        document.getElementById('prevMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        document.getElementById('nextMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+        // 言語タブクリックイベント
+        document.querySelectorAll('.language-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const lang = tab.getAttribute('data-lang');
+                switchLanguage(lang);
+            });
+        });
+
+        // 初期化
+        document.addEventListener('DOMContentLoaded', () => {
+            switchLanguage('ja');
+        });
+    </script>
+</body>
+</html>
