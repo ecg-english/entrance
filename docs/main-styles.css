@@ -1561,10 +1561,9 @@ body::before {
 .reservation-section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
-    color: #ffffff;
     text-align: center;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+    background: linear-gradient(135deg, #7f7f7f 0%, #000000 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1572,7 +1571,7 @@ body::before {
 
 .reservation-section p {
     font-size: 1.1rem;
-    color: #e5e5e5;
+    color: #4b4b4b;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -2447,22 +2446,14 @@ body::before {
 }
 
 .event-content {
-    padding: 24px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
 }
 
-.event-title {
-    color: white;
-    font-size: 20px;
-    margin: 0 0 12px 0;
-    font-weight: 600;
-}
-
-.event-description {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-    margin: 0 0 20px 0;
-    font-size: 14px;
-}
 
 .reserve-button {
     width: 100%;
