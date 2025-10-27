@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今月の日曜イベント - 英会話ジム ECG</title>
+    <link rel="stylesheet" href="main-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ヘッダーナビゲーション -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="ECGロゴ.png" alt="ECG English" class="logo-image">
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="index.html#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="index.html#instructors" class="nav-link">Instructors</a></li>
+                    <li class="nav-item"><a href="index.html#community" class="nav-link">Community</a></li>
+                    <li class="nav-item"><a href="trial.html" class="nav-link">Trial Lesson</a></li>
+                    <li class="nav-item"><a href="class0.html" class="nav-link">Join Class0</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="メニューを開く">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <!-- ヒーローセクション -->
+        <section class="hero-section events-hero">
+            <div class="hero-content">
+                <h1 class="hero-title">今月の日曜イベント</h1>
+                <p class="hero-subtitle">毎週日曜日に開催される特別な文化交流イベント</p>
+                <p class="hero-description">多様な文化体験を通じて、世界中の人々とつながりましょう。</p>
+            </div>
+        </section>
+
+        <!-- 予約フォームセクション -->
+        <section class="reservation-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">イベント予約</h2>
+                    <p class="section-subtitle">メールアドレスを入力して、参加したいイベントを選択してください</p>
+                </div>
+                
+                <form id="reservationForm" class="reservation-form">
+                    <div class="email-input-container">
+                        <label for="email" class="email-label">メールアドレス</label>
+                        <input type="email" id="email" name="email" class="email-input" placeholder="your@email.com" required>
+                        <div class="email-status" id="emailStatus">
+                            <span class="status-text">有効なメールアドレスを入力してください</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- イベント一覧セクション -->
+        <section class="events-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title2">今月のイベント一覧</h2>
+                    <p class="section-subtitle2">横にスワイプして全てのイベントをご覧ください</p>
+                </div>
+                
+                <div class="events-slider-container">
+                    <div class="events-slider" id="eventsSlider">
+                        <!-- Event1 -->
+                        <div class="event-card" data-event="1">
+                            <div class="event-image">
+                                <img src="Event1.png" alt="Event 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="placeholder-image" style="display: none;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                    </svg>
+                                    <p>Event1.pngをアップロード</p>
+                                </div>
+                            </div>
+                            <div class="event-content">
+                                <button class="reserve-button" disabled data-event="1">Reserve</button>
+                            </div>
+                        </div>
+
+                        <!-- Event2 -->
+                        <div class="event-card" data-event="2">
+                            <div class="event-image">
+                                <img src="Event2.png" alt="Event 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="placeholder-image" style="display: none;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                    </svg>
+                                    <p>Event2.pngをアップロード</p>
+                                </div>
+                            </div>
+                            <div class="event-content">
+                                <button class="reserve-button" disabled data-event="2">Reserve</button>
+                            </div>
+                        </div>
+
+                        <!-- Event3 -->
+                        <div class="event-card" data-event="3">
+                            <div class="event-image">
+                                <img src="Event3.png" alt="Event 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="placeholder-image" style="display: none;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                    </svg>
+                                    <p>Event3.pngをアップロード</p>
+                                </div>
+                            </div>
+                            <div class="event-content">
+                                <button class="reserve-button" disabled data-event="3">Reserve</button>
+                            </div>
+                        </div>
+
+                        <!-- Event4 -->
+                        <div class="event-card" data-event="4">
+                            <div class="event-image">
+                                <img src="Event4.png" alt="Event 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="placeholder-image" style="display: none;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                    </svg>
+                                    <p>Event4.pngをアップロード</p>
+                                </div>
+                            </div>
+                            <div class="event-content">
+                                <button class="reserve-button" disabled data-event="4">Reserve</button>
+                            </div>
+                        </div>
+
+                        <!-- Event5 (動的表示) -->
+                        <div class="event-card" data-event="5" id="event5Card" style="display: none;">
+                            <div class="event-image">
+                                <img src="Event5.png" alt="Event 5" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="placeholder-image" style="display: none;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                    </svg>
+                                    <p>Event5.pngをアップロード</p>
+                                </div>
+                            </div>
+                            <div class="event-content">
+                                <button class="reserve-button" disabled data-event="5">Reserve</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 送信ボタン -->
+                <div class="submit-section">
+                    <button type="button" id="submitReservation" class="submit-button" disabled>予約を送信</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>英会話ジム ECG</h3>
+                    <p>留学体験を身近に提供するサービス</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: ecg_english@nauticalmile.jp</p>
+                    <p>Instagram: <a href="https://www.instagram.com/english_ecg/" target="_blank">@english_ecg</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links</h3>
+                    <p><a href="https://ecg-english.github.io/language-community/" target="_blank">オンラインコミュニティ</a></p>
+                    <p><a href="trial.html">トライアルレッスン</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <p><a href="privacy.html">個人情報保護方針</a></p>
+                    <p><a href="law.html">特定商取引法に基づく表記</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 英会話ジム ECG. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 固定イベントボタン -->
+    <a href="events.html" class="fixed-event-button">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+        今月のイベント
+    </a>
+
+    <script>
+        // Event5の動的表示チェック
+        function checkEvent5Image() {
+            const img = new Image();
+            img.onload = function() {
+                document.getElementById('event5Card').style.display = 'block';
+            };
+            img.onerror = function() {
+                document.getElementById('event5Card').style.display = 'none';
+            };
+            img.src = 'Event5.png';
+        }
+
+        // 予約システム
+        let selectedEvents = [];
+        let isReservationActive = false;
+
+        // ローカルストレージからメールアドレスを復元
+        function loadSavedEmail() {
+            const savedEmail = localStorage.getItem('ecg_event_email');
+            if (savedEmail) {
+                document.getElementById('email').value = savedEmail;
+                activateReservation();
+            }
+        }
+
+        // メールアドレスをローカルストレージに保存
+        function saveEmail(email) {
+            localStorage.setItem('ecg_event_email', email);
+        }
+
+        // 予約を有効化する関数
+        function activateReservation() {
+            const email = document.getElementById('email').value;
+            const emailStatus = document.getElementById('emailStatus');
+            const statusText = emailStatus.querySelector('.status-text');
+            
+            if (email && email.includes('@')) {
+                isReservationActive = true;
+                document.querySelectorAll('.reserve-button').forEach(button => {
+                    button.disabled = false;
+                    button.classList.add('active');
+                });
+                document.getElementById('submitReservation').disabled = false;
+                document.getElementById('submitReservation').classList.add('active');
+                saveEmail(email);
+                
+                // ステータス表示を更新
+                statusText.textContent = '✓ 予約可能です！下記からイベントを選択してください';
+                emailStatus.classList.add('valid');
+                emailStatus.classList.remove('invalid');
+            } else {
+                isReservationActive = false;
+                document.querySelectorAll('.reserve-button').forEach(button => {
+                    button.disabled = true;
+                    button.classList.remove('active');
+                });
+                document.getElementById('submitReservation').disabled = true;
+                document.getElementById('submitReservation').classList.remove('active');
+                
+                // ステータス表示を更新
+                if (email.length > 0) {
+                    statusText.textContent = '有効なメールアドレスを入力してください';
+                    emailStatus.classList.add('invalid');
+                    emailStatus.classList.remove('valid');
+                } else {
+                    statusText.textContent = '有効なメールアドレスを入力してください';
+                    emailStatus.classList.remove('valid', 'invalid');
+                }
+            }
+        }
+
+        // メールアドレス入力時のリアルタイム検証
+        document.getElementById('email').addEventListener('input', function() {
+            activateReservation();
+        });
+
+        document.querySelectorAll('.reserve-button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (!isReservationActive) return;
+                
+                const eventNumber = this.dataset.event;
+                if (this.classList.contains('selected')) {
+                    this.classList.remove('selected');
+                    selectedEvents = selectedEvents.filter(e => e !== eventNumber);
+                } else {
+                    this.classList.add('selected');
+                    selectedEvents.push(eventNumber);
+                }
+            });
+        });
+
+        document.getElementById('submitReservation').addEventListener('click', function() {
+            if (!isReservationActive || selectedEvents.length === 0) {
+                alert('メールアドレスを入力し、少なくとも1つのイベントを選択してください');
+                return;
+            }
+
+            const email = document.getElementById('email').value;
+            
+            // 確実にGoogleフォームに送信するため、hidden iframeを使用
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.name = 'hidden_iframe';
+            document.body.appendChild(iframe);
+            
+            // Googleフォームに送信するhidden formを作成
+            const hiddenForm = document.createElement('form');
+            hiddenForm.method = 'POST';
+            hiddenForm.action = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdvxlyvNB9p_qZgj9dGC7BEaX5nkVucm-nJrfhnZ4WpeP5WVQ/formResponse';
+            hiddenForm.target = 'hidden_iframe'; // iframe内で送信
+            hiddenForm.style.display = 'none';
+            
+            // メールアドレス
+            const emailInput = document.createElement('input');
+            emailInput.type = 'hidden';
+            emailInput.name = 'entry.1578642178';
+            emailInput.value = email;
+            hiddenForm.appendChild(emailInput);
+            
+            // Event1
+            const event1Input = document.createElement('input');
+            event1Input.type = 'hidden';
+            event1Input.name = 'entry.779169795';
+            event1Input.value = selectedEvents.includes('1') ? '◯' : '';
+            hiddenForm.appendChild(event1Input);
+            
+            // Event2
+            const event2Input = document.createElement('input');
+            event2Input.type = 'hidden';
+            event2Input.name = 'entry.148260849';
+            event2Input.value = selectedEvents.includes('2') ? '◯' : '';
+            hiddenForm.appendChild(event2Input);
+            
+            // Event3
+            const event3Input = document.createElement('input');
+            event3Input.type = 'hidden';
+            event3Input.name = 'entry.758768197';
+            event3Input.value = selectedEvents.includes('3') ? '◯' : '';
+            hiddenForm.appendChild(event3Input);
+            
+            // Event4
+            const event4Input = document.createElement('input');
+            event4Input.type = 'hidden';
+            event4Input.name = 'entry.1865312747';
+            event4Input.value = selectedEvents.includes('4') ? '◯' : '';
+            hiddenForm.appendChild(event4Input);
+            
+            // Event5
+            const event5Input = document.createElement('input');
+            event5Input.type = 'hidden';
+            event5Input.name = 'entry.819268744';
+            event5Input.value = selectedEvents.includes('5') ? '◯' : '';
+            hiddenForm.appendChild(event5Input);
+            
+            // フォームをDOMに追加して送信
+            document.body.appendChild(hiddenForm);
+            hiddenForm.submit();
+            
+            // 送信完了後、カスタムサンクスページに遷移
+            setTimeout(() => {
+                // クリーンアップ
+                if (document.body.contains(hiddenForm)) {
+                    document.body.removeChild(hiddenForm);
+                }
+                if (document.body.contains(iframe)) {
+                    document.body.removeChild(iframe);
+                }
+                
+                // カスタムサンクスページに遷移
+                window.location.href = 'SundayEventThanks.html';
+            }, 1000);
+        });
+
+        // モバイルメニューの開閉
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // メニューリンクをクリックしたらメニューを閉じる
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // ページ読み込み時の初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            checkEvent5Image();
+            loadSavedEmail();
+        });
+    </script>
+</body>
+</html>
