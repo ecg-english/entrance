@@ -311,26 +311,78 @@
 
             const email = document.getElementById('email').value;
             
-            // バックグラウンドでGoogleフォームに送信（完全に非表示）
-            const formData = new FormData();
-            formData.append('entry.1578642178', email);
-            formData.append('entry.779169795', selectedEvents.includes('1') ? '◯' : '');
-            formData.append('entry.148260849', selectedEvents.includes('2') ? '◯' : '');
-            formData.append('entry.758768197', selectedEvents.includes('3') ? '◯' : '');
-            formData.append('entry.1865312747', selectedEvents.includes('4') ? '◯' : '');
-            formData.append('entry.819268744', selectedEvents.includes('5') ? '◯' : '');
+            // 確実にGoogleフォームに送信するため、hidden iframeを使用
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.name = 'hidden_iframe';
+            document.body.appendChild(iframe);
             
-            // fetchで送信（CORSエラーを無視）
-            fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSdvxlyvNB9p_qZgj9dGC7BEaX5nkVucm-nJrfhnZ4WpeP5WVQ/formResponse', {
-                method: 'POST',
-                mode: 'no-cors',
-                body: formData
-            }).catch(() => {
-                // CORSエラーは無視（データは送信される）
-            });
+            // Googleフォームに送信するhidden formを作成
+            const hiddenForm = document.createElement('form');
+            hiddenForm.method = 'POST';
+            hiddenForm.action = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdvxlyvNB9p_qZgj9dGC7BEaX5nkVucm-nJrfhnZ4WpeP5WVQ/formResponse';
+            hiddenForm.target = 'hidden_iframe'; // iframe内で送信
+            hiddenForm.style.display = 'none';
             
-            // 即座にカスタムサンクスページに遷移
-            window.location.href = 'SundayEventThanks.html';
+            // メールアドレス
+            const emailInput = document.createElement('input');
+            emailInput.type = 'hidden';
+            emailInput.name = 'entry.1578642178';
+            emailInput.value = email;
+            hiddenForm.appendChild(emailInput);
+            
+            // Event1
+            const event1Input = document.createElement('input');
+            event1Input.type = 'hidden';
+            event1Input.name = 'entry.779169795';
+            event1Input.value = selectedEvents.includes('1') ? '◯' : '';
+            hiddenForm.appendChild(event1Input);
+            
+            // Event2
+            const event2Input = document.createElement('input');
+            event2Input.type = 'hidden';
+            event2Input.name = 'entry.148260849';
+            event2Input.value = selectedEvents.includes('2') ? '◯' : '';
+            hiddenForm.appendChild(event2Input);
+            
+            // Event3
+            const event3Input = document.createElement('input');
+            event3Input.type = 'hidden';
+            event3Input.name = 'entry.758768197';
+            event3Input.value = selectedEvents.includes('3') ? '◯' : '';
+            hiddenForm.appendChild(event3Input);
+            
+            // Event4
+            const event4Input = document.createElement('input');
+            event4Input.type = 'hidden';
+            event4Input.name = 'entry.1865312747';
+            event4Input.value = selectedEvents.includes('4') ? '◯' : '';
+            hiddenForm.appendChild(event4Input);
+            
+            // Event5
+            const event5Input = document.createElement('input');
+            event5Input.type = 'hidden';
+            event5Input.name = 'entry.819268744';
+            event5Input.value = selectedEvents.includes('5') ? '◯' : '';
+            hiddenForm.appendChild(event5Input);
+            
+            // フォームをDOMに追加して送信
+            document.body.appendChild(hiddenForm);
+            hiddenForm.submit();
+            
+            // 送信完了後、カスタムサンクスページに遷移
+            setTimeout(() => {
+                // クリーンアップ
+                if (document.body.contains(hiddenForm)) {
+                    document.body.removeChild(hiddenForm);
+                }
+                if (document.body.contains(iframe)) {
+                    document.body.removeChild(iframe);
+                }
+                
+                // カスタムサンクスページに遷移
+                window.location.href = 'SundayEventThanks.html';
+            }, 1000);
         });
 
         // モバイルメニューの開閉
